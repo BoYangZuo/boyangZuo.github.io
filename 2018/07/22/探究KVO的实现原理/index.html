@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="熟悉iOS开发者模式的都知道 Key-Value-Observe（观察者模式）该模式的实现基于两个方法：  给某个对象实例添加监听 12//参数的意思分别是 要被监听的对象 要被监听的属性 监听的类型 上下文addObserver:&amp;lt;#(nonnull NSObject *)#&amp;gt; forKeyPath:&amp;lt;#(nonnull NSString *)#&amp;gt; options:&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探究KVO的实现原理">
+<meta property="og:url" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/index.html">
+<meta property="og:site_name" content="G.O.D的技术博客">
+<meta property="og:description" content="熟悉iOS开发者模式的都知道 Key-Value-Observe（观察者模式）该模式的实现基于两个方法：  给某个对象实例添加监听 12//参数的意思分别是 要被监听的对象 要被监听的属性 监听的类型 上下文addObserver:&amp;lt;#(nonnull NSObject *)#&amp;gt; forKeyPath:&amp;lt;#(nonnull NSString *)#&amp;gt; options:&amp;lt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图1.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图2.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图3.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图4.png">
+<meta property="og:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图5.png">
+<meta property="og:updated_time" content="2018-07-23T14:45:14.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="探究KVO的实现原理">
+<meta name="twitter:description" content="熟悉iOS开发者模式的都知道 Key-Value-Observe（观察者模式）该模式的实现基于两个方法：  给某个对象实例添加监听 12//参数的意思分别是 要被监听的对象 要被监听的属性 监听的类型 上下文addObserver:&amp;lt;#(nonnull NSObject *)#&amp;gt; forKeyPath:&amp;lt;#(nonnull NSString *)#&amp;gt; options:&amp;lt">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/22/探究KVO的实现原理/图1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/22/探究KVO的实现原理/"/>
+
+
+
+
+
+  <title>探究KVO的实现原理 | G.O.D的技术博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G.O.D的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">小舟从此逝 代码寄余生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/探究KVO的实现原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">探究KVO的实现原理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T22:47:31+08:00">
+                2018-07-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-23T22:45:14+08:00">
+                2018-07-23
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,912
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>熟悉iOS开发者模式的都知道 <strong>Key-Value-Observe（观察者模式）</strong><br>该模式的实现基于两个方法：</p>
+<ol>
+<li><p>给某个对象实例添加监听</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//参数的意思分别是 要被监听的对象 要被监听的属性 监听的类型 上下文</span><br><span class="line">addObserver:&lt;#(nonnull NSObject *)#&gt; forKeyPath:&lt;#(nonnull NSString *)#&gt; options:&lt;#(NSKeyValueObservingOptions)#&gt; context:&lt;#(nullable void *)#&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>监听事件的回调</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//参数的意思分别是 要被监听的属性 要被监听的对象 被监听的属性发生的改变 上下文</span><br><span class="line">observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSKeyValueChangeKey,id&gt; *)change context:(void *)context</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过比较这两个方法可以发现，很多在注册监听的时候传入的参数在监听回调的方法中都有返回。比如监听的对象，属性以及我们传入的上下文。</p>
+<p>我们通过一个简单的列子来慢慢分析<strong>KVO</strong>的内部实现细节：</p>
+<p>创建一个名为<code>ZBYObject</code>的类。生成两个实例对象，给其中一个实例对象增加监听：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@interface ViewController ()</span><br><span class="line">@property (nonatomic,strong) ZBYObject *obj1;</span><br><span class="line">@property (nonatomic,strong) ZBYObject *obj2;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">self.obj1 = [[ZBYObject alloc]init];</span><br><span class="line">self.obj1.profession = @&quot;Singer&quot;;</span><br><span class="line">self.obj2 = [[ZBYObject alloc]init];</span><br><span class="line">self.obj2.profession = @&quot;Student&quot;;</span><br><span class="line"></span><br><span class="line">NSKeyValueObservingOptions options =  NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;</span><br><span class="line">[self.obj1 addObserver:self forKeyPath:@&quot;profession&quot; options:options context:nil];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</span><br><span class="line">self.obj1.profession = @&quot;Doctor&quot;;</span><br><span class="line">self.obj2.profession = @&quot;Teacher&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSKeyValueChangeKey,id&gt; *)change context:(void *)context&#123;</span><br><span class="line">NSLog(@&quot;监听到%@的%@属性值改变了:%@&quot;,self.obj1,keyPath,change);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)dealloc&#123;</span><br><span class="line">[self.obj1 removeObserver:self forKeyPath:@&quot;profession&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从以上代码来看，很容易能得出一个结论：当我们点击屏幕的时候，会Log出<code>obj1</code>的<code>profession</code>属性的变化。而<code>obj2</code>因为没有被监听，所以不会有任何相关的信息被log出。我们看到<code>obj1</code>的新值旧值都被打印了出来。这与我们添加监听的时候，传入的监听类型有关<code>NSKeyValueObservingOptions</code>。如果我们只想获得新值得话，去掉<code>NSKeyValueObservingOptionOld</code>就好了。对于<code>NSKeyValueObservingOption</code>来说，一般常用的两个值就是<code>NSKeyValueObservingOptionNew</code>和<code>NSKeyValueObservingOptionOld</code>。</p>
+<img src="/2018/07/22/探究KVO的实现原理/图1.png" title="KVO监听信息图">
+<p>那么对于<code>obj1</code>和<code>obj2</code>来说两者一定在哪方面是有些不同，所以当同时改变其<code>profession</code>属性值得时候，只有<code>obj1</code>可以监听到回调。</p>
+<p>我们打印一下<code>obj1</code>和<code>obj2</code>的<code>isa</code>指针看看。<br><img src="/2018/07/22/探究KVO的实现原理/图2.png" title="isa指针图"></p>
+<p>可以看到<code>obj1</code>被监听之后的<code>isa</code>指针指向了<code>NSKVONotifying_ZBYObject</code>这个类。这个类肯定不是我们自己创建的，所以这是系统通过<code>Runtime</code>动态添加的一个类。也就是说当我们给一个实例对象添加监听的时候，系统会自动通过运行时创建一个类。比如现在创建了一个类<code>A</code>，<code>A</code>的实例对象<code>a</code>被监听了，此时系统会动态创建一个叫<code>NSKVONotifying_A</code>的类，这个类是<code>A</code>的子类，原先实例<code>a</code>的<code>isa</code>指针是指向<code>A</code>的，现在指向<code>NSKVONotifying_A</code>。那我们看看具体<code>NSKVONotifying_A</code>和<code>A</code>有哪些不同，为什么<code>NSKVONotifying_A</code>就可以实现监听呢？</p>
+<p>拥有一定编程基础的肯定都能意识到<code>NSKVONotifying_ZBYObject</code>这个类一定重载了某个方法或者实现了一些父类没有的方法才能监听，不然为什么系统要创建一个<code>ZBYObject</code>的子类来完成监听这件事呢？所以我们先获取<code>NSKVONotifying_ZBYObject</code>的实例方法，看看和<code>ZBYObject</code>的实例方法有什么不同。</p>
+<p>这时候需要这样一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* Describes the instance methods implemented by a class.</span><br><span class="line">*</span><br><span class="line">* @param cls The class you want to inspect.</span><br><span class="line">* @param outCount On return, contains the length of the returned array.</span><br><span class="line">*  If outCount is NULL, the length is not returned.</span><br><span class="line">*</span><br><span class="line">* @return An array of pointers of type Method describing the instance methods</span><br><span class="line">*  implemented by the class—any instance methods implemented by superclasses are not included.</span><br><span class="line">*  The array contains *outCount pointers followed by a NULL terminator. You must free the array with free().</span><br><span class="line">*</span><br><span class="line">*  If cls implements no instance methods, or cls is Nil, returns NULL and *outCount is 0.</span><br><span class="line">*</span><br><span class="line">* @note To get the class methods of a class, use \c class_copyMethodList(object_getClass(cls), &amp;count).</span><br><span class="line">* @note To get the implementations of methods that may be implemented by superclasses,</span><br><span class="line">*  use \c class_getInstanceMethod or \c class_getClassMethod.</span><br><span class="line">*/</span><br><span class="line">OBJC_EXPORT Method _Nonnull * _Nullable</span><br><span class="line">class_copyMethodList(Class _Nullable cls, unsigned int * _Nullable outCount)</span><br><span class="line">OBJC_AVAILABLE(10.5, 2.0, 9.0, 1.0, 2.0);</span><br></pre></td></tr></table></figure></p>
+<p>这个函数的意思是传入一个<code>class</code>返回给你一个包含了<code>class</code>里面所有实例方法的数组指针，如果该<code>class</code>没有实例方法则返回<code>NULL</code>。这样的话我们可以通过这个函数拿到<code>NSKVONotifying_ZBYObject</code>的方法数组然后一一遍历打印。代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-(void)printMethodNamesOfClass:(Class )cls&#123;</span><br><span class="line">unsigned int count;</span><br><span class="line">NSMutableArray *methodsNameMA = [NSMutableArray array];</span><br><span class="line">//获得方法数组</span><br><span class="line">Method *methodList = class_copyMethodList(cls, &amp;count);</span><br><span class="line">//遍历所 有方法</span><br><span class="line">for (int i = 0; i&lt;count; i++) &#123;</span><br><span class="line">Method method = methodList[i];</span><br><span class="line">[methodsNameMA addObject:NSStringFromSelector(method_getName(method))];</span><br><span class="line">&#125;</span><br><span class="line">//释放</span><br><span class="line">free(methodList);</span><br><span class="line">NSLog(@&quot;%@ - %@&quot;,cls,methodsNameMA);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self printMethodNamesOfClass:object_getClass(self.obj1)];</span><br><span class="line">[self printMethodNamesOfClass:object_getClass(self.obj2)];</span><br></pre></td></tr></table></figure>
+<p>打印信息如下：<br><img src="/2018/07/22/探究KVO的实现原理/图3.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"><br>我做了一张对比图<br><img src="/2018/07/22/探究KVO的实现原理/图4.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"></p>
+<p>可以很清楚的看到两者的区别：</p>
+<ol>
+<li><code>NSKVONotifying_ZBYObject</code>重载了<code>profession</code>的<code>setProfession</code>方法</li>
+<li><code>NSKVONotifying_ZBYObject</code>还实现了父类没有的<code>class</code>，<code>dealloc</code>和<code>_isKVOA</code>的方法</li>
+</ol>
+<p>那么很明显，<code>isKVO</code>决定了<code>NSKVONotifying_ZBYObject</code>类能实现监听。不过因为拿不到苹果的源码，所以具体<code>isKVO</code>的实现我们并不清楚。不过我们可以来探讨一些其他的问题。</p>
+<p>当我们想要去改变一个实例对象的某个属性值时，一定是通过该属性的<code>set</code>方法去改变的。而且刚刚我们也证实了<code>NSKVONotifying_ZBYObject</code>确实是重载了<code>set</code>方法。我们再分别打印一下<code>NSKVONotifying_ZBYObject</code>和<code>ZBYObject</code>的<code>setProfession</code>方法看一看。</p>
+<p>这里要用到一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (IMP)methodForSelector:(SEL)aSelector;</span><br></pre></td></tr></table></figure></p>
+<p>该函数用于返回一个方法的实现，我们可以打印出方法的地址。<br><strong>IMP</strong>:一个函数指针,保存了方法的地址。在LLDB环境下，通过（IMP）+方法的地址可以打印出来该方法的实现细节。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;obj1添加KVO监听之前 - %p %p&quot;,[self.obj1 methodForSelector:@selector(setProfession:)],[self.obj2 methodForSelector:@selector(setProfession:)]);</span><br><span class="line">NSLog(@&quot;obj1添加KVO监听之后 - %p %p&quot;,[self.obj1 methodForSelector:@selector(setProfession:)],[self.obj2 methodForSelector:@selector(setProfession:)]);</span><br></pre></td></tr></table></figure>
+<img src="/2018/07/22/探究KVO的实现原理/图5.png" title="NSKVONotifying_ZBYObject和ZBYObject的setProfession:方法打印信息图">
+<p>我们发现两者的<code>setProfession</code>方法实现是不同的。添加了监听后，<code>setProfession</code>方法的实现打印出了<code>foundation</code>里面的一个<code>NSSetIntValueAndNotify()</code>方法。</p>
+<p>通过字面意思可以知道<code>NSSetIntValueAndNotify()</code>是<code>int</code>类型的赋值与通知方法。也就是说，当<code>obj1</code>被监听之后，系统会通过动态创建一个监听类，并重载了该类对应属性的<code>set</code>方法，在<code>set</code>方法中增加了监听实现的相关方法<code>NSSetIntValueAndNotify()</code>，然后让<code>obj1</code>继承这个类。这样<code>obj1</code>就拥有了被监听的能力。</p>
+<p>为什么会实现<code>class</code>和<code>dealloc</code>方法呢？<br>其实你有兴趣的话可以通过<code>[self.obj1 class]</code>来打印一下结果，你会惊奇的发现，打印出来的居然是<code>ZBYObject</code>类，不是说好的继承自 <code>NSKVONotifying_ZBYObjec</code>t吗？</p>
+<p>这就是为什么<code>NSKVONotifying_ZBYObject</code>类会重写<code>class</code>方法的原因。如果 <code>NSKVONotifying_ZBYObject</code>没有重载<code>class</code>方法，那么对 <code>NSKVONotifying_ZBYObject</code>实例对象调用<code>class</code>方法会去元类里面找相应的实现，这样会一直找到<code>NSObject</code>里的<code>class</code>实现。而<code>NSObject</code>的<code>class</code>实现是这样的：那么最终当<code>NSKVONotifying_ZBYObject</code>实例对象调用class方法的返回结果就是<code>NSKVONotifying_ZBYObject</code>。但是苹果并不想让你知道这个类，因为这个类是系统动态添加的一个类，只是用于监听的实现，所以苹果通过重载类的<code>class</code>方法将这个类隐藏起来。</p>
+<p>那么为什么会重载<code>dealloc</code>方法呢？我自己的想法是：既然<code>NSKVONotifying_ZBYObject</code>类重载了被监听属性的<code>set</code>方法。在<code>set</code>方法中实现了监听相关的方法，所以需要在<code>dealloc</code>方法中移除监听，避免内存泄漏。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/03/GCD知识小集/" rel="next" title="GCD知识小集">
+                <i class="fa fa-chevron-left"></i> GCD知识小集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author_avatar.JPG"
+                alt="左博杨" />
+            
+              <p class="site-author-name" itemprop="name">左博杨</p>
+              <p class="site-description motion-element" itemprop="description">念念不忘 必有回响</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/BoYangZuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="zby1004@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左博杨</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">12.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

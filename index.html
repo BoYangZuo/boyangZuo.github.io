@@ -236,6 +236,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/Type Inference with __auto_type in Objective-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/Type Inference with __auto_type in Objective-C/" itemprop="url">Type Inference with __auto_type in Objective-C</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T22:47:31+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:56:52+08:00">
+                2018-09-05
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  335
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写<code>Objective-C</code>的时候，因为要遵循驼峰命名法，所以写一个变量之前，首先要想如何优雅的为其命名，然后再用对应的类型去接收它。很多时候，这个类型需要重复的去写，非常麻烦。</p>
+<p>我们知道在<code>Swift</code>里面，有两种申明变量的方式：<code>let</code> 和 <code>var</code><br><code>let</code> 用于定义常量，定义完后不能修改<br><code>var</code> 用于定义变量，定义完后可以修改</p>
+<p>申明常量或者变量的同时如果赋值的话，编译器会自动推断类型，列如<br><code>let age0 = 10</code><br><code>var age1 = &quot;10&quot;</code><br><code>age0</code>为<code>int</code>型，<code>age1</code>为<code>String</code>型</p>
+<p>######那在<code>Objective-C</code>中如何做到这样呢？<br>得益于苹果在<code>Xcode8</code>中已经支持类型推倒，我们就可以用<code>C</code>的<code>__auto_type</code>和<code>C++</code>的<code>auto</code>来定义一个<code>宏let</code> 这样在项目了我们就可以用<code>let</code>来接收一切类型了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#if !defined(var)</span><br><span class="line">#if defined(__cplusplus)</span><br><span class="line">#define var auto</span><br><span class="line">#else</span><br><span class="line">#define var __auto_type</span><br><span class="line">#endif</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if !defined(let)</span><br><span class="line">#define let const var</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>比如<br>定义一个结构体类型 <code>let trackFrame = self.trackLayer.frame;</code><br>定义一个数组类型 <code>let selected = [self indexPathsForSelectedItems];</code><br>定义一个字符串类型 <code>let title = @&quot;i am a text&quot;;</code></p>
+<p>关于<code>Type Inference with __auto_type</code>的更多信息：<br><a href="https://intii.com/2017/write-objc-like-writing-swift/" target="_blank" rel="noopener">https://intii.com/2017/write-objc-like-writing-swift/</a><br><a href="https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372" target="_blank" rel="noopener">https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/Runloop知识点小集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -438,7 +607,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/探究KVO的实现原理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/探究KVO的实现原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="左博杨">
@@ -457,7 +626,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/22/探究KVO的实现原理/" itemprop="url">探究KVO的实现原理</a></h1>
+                <a class="post-title-link" href="/2018/06/28/探究KVO的实现原理/" itemprop="url">探究KVO的实现原理</a></h1>
         
 
         <div class="post-meta">
@@ -469,8 +638,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T22:47:31+08:00">
-                2018-07-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T22:47:31+08:00">
+                2018-06-28
               </time>
             
 
@@ -485,8 +654,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-26T22:42:48+08:00">
-                2018-07-26
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:56:27+08:00">
+                2018-09-05
               </time>
             
           </span>
@@ -570,16 +739,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">self.obj1 = [[ZBYObject alloc]init];</span><br><span class="line">self.obj1.profession = @&quot;Singer&quot;;</span><br><span class="line">self.obj2 = [[ZBYObject alloc]init];</span><br><span class="line">self.obj2.profession = @&quot;Student&quot;;</span><br><span class="line"></span><br><span class="line">NSKeyValueObservingOptions options =  NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;</span><br><span class="line">[self.obj1 addObserver:self forKeyPath:@&quot;profession&quot; options:options context:nil];</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</span><br><span class="line">self.obj1.profession = @&quot;Doctor&quot;;</span><br><span class="line">self.obj2.profession = @&quot;Teacher&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSKeyValueChangeKey,id&gt; *)change context:(void *)context&#123;</span><br><span class="line">NSLog(@&quot;监听到%@的%@属性值改变了:%@&quot;,self.obj1,keyPath,change);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)dealloc&#123;</span><br><span class="line">[self.obj1 removeObserver:self forKeyPath:@&quot;profession&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从以上代码来看，很容易能得出一个结论：当我们点击屏幕的时候，会Log出<code>obj1</code>的<code>profession</code>属性的变化。而<code>obj2</code>因为没有被监听，所以不会有任何相关的信息被log出。我们看到<code>obj1</code>的新值旧值都被打印了出来。这与我们添加监听的时候，传入的监听类型有关<code>NSKeyValueObservingOptions</code>。如果我们只想获得新值得话，去掉<code>NSKeyValueObservingOptionOld</code>就好了。对于<code>NSKeyValueObservingOption</code>来说，一般常用的两个值就是<code>NSKeyValueObservingOptionNew</code>和<code>NSKeyValueObservingOptionOld</code>。</p>
-<img src="/2018/07/22/探究KVO的实现原理/图1.png" title="KVO监听信息图">
+<img src="/2018/06/28/探究KVO的实现原理/图1.png" title="KVO监听信息图">
 <p>那么对于<code>obj1</code>和<code>obj2</code>来说两者一定在哪方面是有些不同，所以当同时改变其<code>profession</code>属性值得时候，只有<code>obj1</code>可以监听到回调。</p>
-<p>我们打印一下<code>obj1</code>和<code>obj2</code>的<code>isa</code>指针看看。<br><img src="/2018/07/22/探究KVO的实现原理/图2.png" title="isa指针图"></p>
+<p>我们打印一下<code>obj1</code>和<code>obj2</code>的<code>isa</code>指针看看。<br><img src="/2018/06/28/探究KVO的实现原理/图2.png" title="isa指针图"></p>
 <p>可以看到<code>obj1</code>被监听之后的<code>isa</code>指针指向了<code>NSKVONotifying_ZBYObject</code>这个类。这个类肯定不是我们自己创建的，所以这是系统通过<code>Runtime</code>动态添加的一个类。也就是说当我们给一个实例对象添加监听的时候，系统会自动通过运行时创建一个类。比如现在创建了一个类<code>A</code>，<code>A</code>的实例对象<code>a</code>被监听了，此时系统会动态创建一个叫<code>NSKVONotifying_A</code>的类，这个类是<code>A</code>的子类，原先实例<code>a</code>的<code>isa</code>指针是指向<code>A</code>的，现在指向<code>NSKVONotifying_A</code>。那我们看看具体<code>NSKVONotifying_A</code>和<code>A</code>有哪些不同，为什么<code>NSKVONotifying_A</code>就可以实现监听呢？</p>
 <h3 id="NSKVONotifying-XXX是什么"><a href="#NSKVONotifying-XXX是什么" class="headerlink" title="NSKVONotifying_XXX是什么"></a>NSKVONotifying_XXX是什么</h3><p>拥有一定编程基础的肯定都能意识到<code>NSKVONotifying_ZBYObject</code>这个类一定重载了某个方法或者实现了一些父类没有的方法才能监听，不然为什么系统要创建一个<code>ZBYObject</code>的子类来完成监听这件事呢？所以我们先获取<code>NSKVONotifying_ZBYObject</code>的实例方法，看看和<code>ZBYObject</code>的实例方法有什么不同。</p>
 <p>这时候需要这样一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* Describes the instance methods implemented by a class.</span><br><span class="line">*</span><br><span class="line">* @param cls The class you want to inspect.</span><br><span class="line">* @param outCount On return, contains the length of the returned array.</span><br><span class="line">*  If outCount is NULL, the length is not returned.</span><br><span class="line">*</span><br><span class="line">* @return An array of pointers of type Method describing the instance methods</span><br><span class="line">*  implemented by the class—any instance methods implemented by superclasses are not included.</span><br><span class="line">*  The array contains *outCount pointers followed by a NULL terminator. You must free the array with free().</span><br><span class="line">*</span><br><span class="line">*  If cls implements no instance methods, or cls is Nil, returns NULL and *outCount is 0.</span><br><span class="line">*</span><br><span class="line">* @note To get the class methods of a class, use \c class_copyMethodList(object_getClass(cls), &amp;count).</span><br><span class="line">* @note To get the implementations of methods that may be implemented by superclasses,</span><br><span class="line">*  use \c class_getInstanceMethod or \c class_getClassMethod.</span><br><span class="line">*/</span><br><span class="line">OBJC_EXPORT Method _Nonnull * _Nullable</span><br><span class="line">class_copyMethodList(Class _Nullable cls, unsigned int * _Nullable outCount)</span><br><span class="line">OBJC_AVAILABLE(10.5, 2.0, 9.0, 1.0, 2.0);</span><br></pre></td></tr></table></figure></p>
 <p>这个函数的意思是传入一个<code>class</code>返回给你一个包含了<code>class</code>里面所有实例方法的数组指针，如果该<code>class</code>没有实例方法则返回<code>NULL</code>。这样的话我们可以通过这个函数拿到<code>NSKVONotifying_ZBYObject</code>的方法数组然后一一遍历打印。代码如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-(void)printMethodNamesOfClass:(Class )cls&#123;</span><br><span class="line">unsigned int count;</span><br><span class="line">NSMutableArray *methodsNameMA = [NSMutableArray array];</span><br><span class="line">//获得方法数组</span><br><span class="line">Method *methodList = class_copyMethodList(cls, &amp;count);</span><br><span class="line">//遍历所 有方法</span><br><span class="line">for (int i = 0; i&lt;count; i++) &#123;</span><br><span class="line">Method method = methodList[i];</span><br><span class="line">[methodsNameMA addObject:NSStringFromSelector(method_getName(method))];</span><br><span class="line">&#125;</span><br><span class="line">//释放</span><br><span class="line">free(methodList);</span><br><span class="line">NSLog(@&quot;%@ - %@&quot;,cls,methodsNameMA);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[self printMethodNamesOfClass:object_getClass(self.obj1)];</span><br><span class="line">[self printMethodNamesOfClass:object_getClass(self.obj2)];</span><br></pre></td></tr></table></figure>
-<p>打印信息如下：<br><img src="/2018/07/22/探究KVO的实现原理/图3.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"><br>我做了一张对比图<br><img src="/2018/07/22/探究KVO的实现原理/图4.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"></p>
+<p>打印信息如下：<br><img src="/2018/06/28/探究KVO的实现原理/图3.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"><br>我做了一张对比图<br><img src="/2018/06/28/探究KVO的实现原理/图4.png" title="NSKVONotifying_ZBYObject和ZBYObject的实例方法图"></p>
 <p>可以很清楚的看到两者的区别：</p>
 <ol>
 <li><code>NSKVONotifying_ZBYObject</code>重载了<code>profession</code>的<code>setProfession</code>方法</li>
@@ -590,7 +759,7 @@
 <p>这里要用到一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (IMP)methodForSelector:(SEL)aSelector;</span><br></pre></td></tr></table></figure></p>
 <p>该函数用于返回一个方法的实现，我们可以打印出方法的地址。<br><strong>IMP</strong>:一个函数指针,保存了方法的地址。在LLDB环境下，通过（IMP）+方法的地址可以打印出来该方法的实现细节。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;obj1添加KVO监听之前 - %p %p&quot;,[self.obj1 methodForSelector:@selector(setProfession:)],[self.obj2 methodForSelector:@selector(setProfession:)]);</span><br><span class="line">NSLog(@&quot;obj1添加KVO监听之后 - %p %p&quot;,[self.obj1 methodForSelector:@selector(setProfession:)],[self.obj2 methodForSelector:@selector(setProfession:)]);</span><br></pre></td></tr></table></figure>
-<img src="/2018/07/22/探究KVO的实现原理/图5.png" title="NSKVONotifying_ZBYObject和ZBYObject的setProfession:方法打印信息图">
+<img src="/2018/06/28/探究KVO的实现原理/图5.png" title="NSKVONotifying_ZBYObject和ZBYObject的setProfession:方法打印信息图">
 <p>我们发现两者的<code>setProfession</code>方法实现是不同的。添加了监听后，<code>setProfession</code>方法的实现打印出了<code>foundation</code>里面的一个<code>NSSetIntValueAndNotify()</code>方法。</p>
 <p>通过字面意思可以知道<code>NSSetIntValueAndNotify()</code>是<code>int</code>类型的赋值与通知方法。也就是说，当<code>obj1</code>被监听之后，系统会通过动态创建一个监听类，并重载了该类对应属性的<code>set</code>方法，在<code>set</code>方法中增加了监听实现的相关方法<code>NSSetIntValueAndNotify()</code>，然后让<code>obj1</code>继承这个类。这样<code>obj1</code>就拥有了被监听的能力。</p>
 <h3 id="为什么会实现class和dealloc方法呢？"><a href="#为什么会实现class和dealloc方法呢？" class="headerlink" title="为什么会实现class和dealloc方法呢？"></a>为什么会实现<code>class</code>和<code>dealloc</code>方法呢？</h3><p>其实你有兴趣的话可以通过<code>[self.obj1 class]</code>来打印一下结果，你会惊奇的发现，打印出来的居然是<code>ZBYObject</code>类，不是说好的继承自 <code>NSKVONotifying_ZBYObjec</code>t吗？</p>
@@ -880,7 +1049,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/iOS内存管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/iOS内存管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="左博杨">
@@ -899,7 +1068,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/03/iOS内存管理/" itemprop="url">iOS内存管理</a></h1>
+                <a class="post-title-link" href="/2018/05/20/iOS内存管理/" itemprop="url">iOS内存管理</a></h1>
         
 
         <div class="post-meta">
@@ -911,8 +1080,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T00:42:40+08:00">
-                2018-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T22:47:31+08:00">
+                2018-05-20
               </time>
             
 
@@ -927,8 +1096,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T12:28:27+08:00">
-                2018-07-28
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:57:53+08:00">
+                2018-09-05
               </time>
             
           </span>
@@ -1147,7 +1316,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1177,9 +1346,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.jianshu.com/u/e19c4fb93a90" target="_blank" title="简书">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="ow">
                       
-                        <i class="fa fa-fw fa-globe"></i>简书</a>
+                        <i class="fa fa-fw fa-stack-overflow"></i>ow</a>
                   </span>
                 
             </div>
@@ -1224,7 +1393,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.9k</span>
+    <span title="Site words total count">14.3k</span>
   
 </div>
 

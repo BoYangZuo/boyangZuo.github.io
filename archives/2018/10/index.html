@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Archive: 2018/10
+  
+</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="G.O.D的技术博客">
+<meta property="og:url" content="http://yoursite.com/archives/2018/10/index.html">
+<meta property="og:site_name" content="G.O.D的技术博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="G.O.D的技术博客">
+
+
+  <link rel="alternative" href="/atom.xml" title="G.O.D的技术博客" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">G.O.D的技术博客</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">G.O.D的技术博客</a></h1>
+    
+      <p class="subtitle">
+        小舟从此逝 代码寄余生
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">左博杨</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/author_avatar.JPG"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">Category</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">7</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/BoYangZuo" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="https://www.jianshu.com/u/e19c4fb93a90" title="简书" target="_blank" rel="noopener">简书</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
+
+  
+  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2018/10/16/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/" >
+  
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2018/10/16/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/"><span class="article-date">
+  2018-10-16
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>最近几周的时间都在重构一个控件。仿照 AppStore 中的下载效果写的一个按钮。写篇文章记录一下心得体会。</p>
+<p>文章分为重构前，为什么重构，以及重构后三部分去叙述代码层面的设计思想。这里规避了繁琐的业务逻辑，以及为了解决实际应用场景中 cell 的复用而做的一些处理，仅仅聚焦于类的职责设计。</p>
+<p>先看一下效果图</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1501971-e8504a3fd10be529.gif?imageMogr2/auto-orient/strip" alt="IMG_1079.TRIM.gif"></p>
+<h2 id="重构前的代码"><a href="#重构前的代码" class="headerlink" title="重构前的代码"></a>重构前的代码</h2><h4 id="UPDownloadButtonDefines-h"><a href="#UPDownloadButtonDefines-h" class="headerlink" title="UPDownloadButtonDefines.h"></a>UPDownloadButtonDefines.h</h4><p>UPDownloadButtonDefines.h 中用枚举定义了 DownloadButton 的 state，每种状态对应一种UI形态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSUInteger, EUPDownloadButtonState) &#123;</span><br><span class="line">    nUPDownloadButtonStateIdle, //闲置状态，等待下载</span><br><span class="line">    nUPDownloadButtonStatePending, //开始下载，还没有接收到数据</span><br><span class="line">    nUPDownloadButtonStateDownloading, //接收到数据</span><br><span class="line">    nUPDownloadButtonStateDownloaded, //下载完成</span><br><span class="line"></span><br><span class="line">    nUPDownloadButtonStateDefault = nUPDownloadButtonStateIdle,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="OUPDownloadButton"><a href="#OUPDownloadButton" class="headerlink" title="OUPDownloadButton"></a>OUPDownloadButton</h4><p>OUPDownloadButton 继承自 UIView，它是整个库的核心。它负责：</p>
+<ol>
+<li>初始化一些必要的元素： 比如 OUPDownloadButtonTitleView ， 图片，UIControl，转圈图层，进度环图层等。</li>
+<li>处理点击事件。</li>
+<li>管理 state。</li>
+<li>管理 state 相关的 UI 代码。</li>
+</ol>
+<p>看一下 OUPDownloadButton 的头文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@protocol OUPDownloadButtonDelegate&lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@optional</span><br><span class="line">- (void)downloadButtonDidStartDownloading:(OUPDownloadButton*)downloadButton;</span><br><span class="line">- (void)downloadButtonDidCancelDownloading:(OUPDownloadButton*)downloadButton;</span><br><span class="line">- (void)downloadButtonDidTapAfterDownload:(OUPDownloadButton*)downloadButton;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface OUPDownloadButton : UIView</span><br><span class="line"></span><br><span class="line">@property (nonatomic) OUPDownloadButtonConfiguration* configuration;</span><br><span class="line"></span><br><span class="line">// idle -&gt; pending -&gt; downloading -&gt; downloaded</span><br><span class="line">@property (nonatomic, readonly) EUPDownloadButtonState state;</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;OUPDownloadButtonDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// 0.0 ~ 1.0</span><br><span class="line">@property (nonatomic) CGFloat progress;</span><br><span class="line"></span><br><span class="line">- (void)start;</span><br><span class="line">- (void)cancel;</span><br><span class="line">- (void)complete;</span><br><span class="line">- (void)restoreWithState:(EUPDownloadButtonState)state progress:(CGFloat)progress;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<ul>
+<li>DownloadButton 通过代理来建立与 Controller 的联系。通知任务下载开始，结束，以及取消时的事件。</li>
+<li>持有 state 属性，因为不希望在 DownloadButton 以外的地方更改 state ，所以设计成了 readonly。</li>
+<li>提供 start 等方法给外界调用，切换 DownloadButton 的状态。</li>
+</ul>
+<h4 id="OUPDownloadButtonConfiguration"><a href="#OUPDownloadButtonConfiguration" class="headerlink" title="OUPDownloadButtonConfiguration"></a>OUPDownloadButtonConfiguration</h4><p>OUPDownloadButtonConfiguration 用于配置 DownloadButton 在不同状态时的 UI 样式（比如 图片 字体 颜色等）</p>
+<h4 id="OUPDownloadButtonTitleView"><a href="#OUPDownloadButtonTitleView" class="headerlink" title="OUPDownloadButtonTitleView"></a>OUPDownloadButtonTitleView</h4><p>OUPDownloadButtonTitleView 是按钮的标题视图，它包含了一个 Calyer 和 UILabel 。因为 OUPDownloadButton 的 UI 形态在切换的时候会有一些过度动画，这个过度动画主要由 OUPDownloadButtonTitleView 来负责，所以单独抽个类出来也易于管理和设计接口。</p>
+<p>看一下 DownloadButton 的点击事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (void)onTap:(id)sender</span><br><span class="line">&#123;</span><br><span class="line">    switch (_state)</span><br><span class="line">    &#123;</span><br><span class="line">        case nUPDownloadButtonStateIdle:</span><br><span class="line">            [self exitIdle];</span><br><span class="line">            [self enterPendingAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStatePending:</span><br><span class="line">            [self cancelAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStateDownloading:</span><br><span class="line">            [self cancelAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStateDownloaded:</span><br><span class="line">            [self tappedAfterDownload];</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            SCShouldNotReachAssert();</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们点击 DownloadButton ，代码的执行思路大致是这样：根据当前的不同 state执行不同的方法，并手动更新 state 的值。比如当按钮处于 idle 的时候，点击进入 pending。当按钮处于 pending 或是 downloading 的时候，点击取消下载，恢复到idle。</p>
+<p>MVC下的实际使用：<br><img src="https://upload-images.jianshu.io/upload_images/1501971-465451a0f95a2de5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="屏幕快照 2018-10-15 下午3.08.22.png"></p>
+<h3 id="为什么需要重构"><a href="#为什么需要重构" class="headerlink" title="为什么需要重构"></a>为什么需要重构</h3><p>看完第一节我们就很清楚 DownloadButton 这个类的臃肿性了。如果我们需要额外增加一种状态，那么我们需要在 DownloadButton 中增加额外的状态判断和切换，对应的UI更新。这样 DownloadButton 会变得越来越难以维护，代码的可读性也会越来越差。</p>
+<p>DownloadButton 既然是一个 UIView，那么它就应该只负责 UI 层面的事情，state可以交给专业的类去管理，这样既可以减轻 DownloadButton 的负担，又可以让DownloadButton 遵守面向对象的单一原则。所以 DownloadButton 中实际上不应该出现和 state 有关的任何代码。</p>
+<p>或许我们可以做的更多。UI层面的事情我们也可以用 Category 来进一步管理。将state 相关的 UI 更新抽到分类中来专门维护。</p>
+<p>所以我们希望重构之后的 DownloadButton 既不用关心 state，又不用关心 state 相关的 UI 更新。</p>
+<h3 id="重构后的代码"><a href="#重构后的代码" class="headerlink" title="重构后的代码"></a>重构后的代码</h3><p>现在来看下重构后的库结构：</p>
+<p>首先将类的命名改了： DownloadButton -&gt; OperationButton 因为项目中可能会在其他场景下用到此类的 button，比如内购的支付按钮。所以命名上我们希望这个按钮能够适应所有可能的业务场景而不局限于下载。</p>
+<h4 id="OUPOperationButtonImageView"><a href="#OUPOperationButtonImageView" class="headerlink" title="OUPOperationButtonImageView"></a>OUPOperationButtonImageView</h4><p>将之前的图片抽了一个单独的类出来 便于管理 结构更加清晰 也方便于接口设计。</p>
+<h4 id="OUPOperationButtonProcessView"><a href="#OUPOperationButtonProcessView" class="headerlink" title="OUPOperationButtonProcessView"></a>OUPOperationButtonProcessView</h4><p>将之前的转圈图层和进度环图层抽了一个单独的类出来 便于管理 结构更加清晰 也方便于接口设计。</p>
+<h4 id="OUPOperationButtonTransitionManager"><a href="#OUPOperationButtonTransitionManager" class="headerlink" title="OUPOperationButtonTransitionManager"></a>OUPOperationButtonTransitionManager</h4><p>OUPOperationButtonTransitionManager 负责状态的维护。<br>OUPOperationButtonTransitionManager 里面维护着一个<a href="https://github.com/blakewatters/TransitionKit" target="_blank" rel="noopener">状态机</a>，在OUPOperationButtonTransitionManager 中我们可以定义各种状态及事件。状态机将状态和事件关联起来。</p>
+<p>比如按钮从 state A切换到了 state B。那么我们将 A 称为 SourceState 将 B 称为DestinationState。我们将这个转换状态的过程定义为事件。事件的初始化依赖于SourceState 和 DestinationState。</p>
+<p>每个事件的 SourceState 可以有多个，但是 DestinationState 只能有一个。当我们想切换状态的时候，就可以让状态机执行一个以目标状态为 DestinationState 的一个事件。如果当前状态是 SourceState 中的一个，那么这个事件将被正常执行。</p>
+<p>比如 按钮从点击下载开始的状态转换过程为：</p>
+<p>StateOriginal -&gt; StateReady -&gt; StateExecuting -&gt; StateFinished</p>
+<p>当我们想取消下载的时候  状态机会去执行一个 cancel 事件。当按钮在 StateReady的时候你可以 cancel，当按钮在 StateExecuting 的时候你也可以 cancel。但是无论你是从哪种状态 cancel的，cancel 事件成功后状态都会变成 StateOriginal。这里的StateReady 和 StateExecuting 叫做 SourceState。StateOriginal 叫做DestinationState。</p>
+<p>那么问题来了，状态的管理问题是解决了，Button 已经不再自己维护状态了。不过如何通知 Button 在状态切换的时候更新UI呢？</p>
+<p>嗯… 说的直白一点。我们对 OUPOperationButtonTransitionManager 这个类的期望是：</p>
+<ol>
+<li>帮我们管理好 Button 的状态 当外界的 view action 到来时 OUPOperationButtonTransitionManager 会帮我们切换对应的状态</li>
+<li>状态切换时能够及时通知 Button 去更新 UI </li>
+</ol>
+<p>我们来看一下 OUPOperationButtonTransitionManager 的头文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@interface OUPOperationButtonTransitionManager : NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, readonly) EUPOperationButtonState currentState;</span><br><span class="line"></span><br><span class="line">- (instancetype)initWithHandlers:(NSDictionary*)handlers;</span><br><span class="line"></span><br><span class="line">- (void)fireEventWithTargetState:(EUPOperationButtonState)state;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>可以看到OUPOperationButtonTransitionManager有一个初始化方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (instancetype)initWithHandlers:(NSDictionary*)handlers;</span><br></pre></td></tr></table></figure>
+<p>handlers 以 state 作为 key 对应的 UI 更新事件（闭包）作为 value。OUPOperationButtonTransitionManager 会在状态切换的时候根据一个状态的进入或退出去执行对应的闭包。</p>
+<p>示例代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)setDidEnterStateActionForState:(TKState*)state</span><br><span class="line">&#123;</span><br><span class="line">  SC_WEAKIFY(self);</span><br><span class="line">  [state setDidEnterStateBlock:^(TKState* state, TKTransition* transition) &#123;</span><br><span class="line">      SC_STRONGIFY(self);</span><br><span class="line">      //state的字符串作为key从handler中取出对应的闭包 然后执行。</span><br><span class="line">      self.didEnterStateHandlers[state.name](nil);</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="OUPOperationButton-FSM"><a href="#OUPOperationButton-FSM" class="headerlink" title="OUPOperationButton+FSM"></a>OUPOperationButton+FSM</h4><p>OUPOperationButton+FSM 的职责：</p>
+<ol>
+<li>维护状态相关的 UI 代码</li>
+<li>创建 OUPOperationButtonTransitionManager</li>
+<li>给外界提供更改状态的接口</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@interface OUPOperationButton (FSM)</span><br><span class="line"></span><br><span class="line">- (void)setupFSM;</span><br><span class="line">- (void)transitionToTargetState:(EUPOperationButtonState)state;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>在 OUPOperationButton+FSM.m 中我们定义了各种状态切换的 UI 更新代码，那么理所当然，OUPOperationButtonTransitionManager 应该在OUPOperationButton+FSM 中被初始化。</p>
+<h4 id="OUPOperationButton-Internal-h"><a href="#OUPOperationButton-Internal-h" class="headerlink" title="OUPOperationButton_Internal.h"></a>OUPOperationButton_Internal.h</h4><p>OUPOperationButton 拥有了可以管理状态的OUPOperationButtonTransitionManager 以及管理 state 相关的 UI 代码的OUPOperationButton+FSM。不过当我们将 OUPOperationButton 封装成一个静态库的时候，我可不希望将这两个类的头文件暴露出去。因为调用者并不需要知道OUPOperationButton 是怎么实现的。所以这里还需要一个 internal.h 来帮助我们隐藏掉我们不想暴露给外界的头文件。我们将 Button 中的各个控件以及OUPOperationButtonTransitionManager 放到 Internal.h 中供 Button 模块内部调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;OUPOperationButton.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonImageView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonProcessView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTextView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTransitionManager.h&quot;</span><br><span class="line"></span><br><span class="line">@interface OUPOperationButton ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic) UIControl* backingControl;</span><br><span class="line">@property (nonatomic) OUPOperationButtonTextView* textView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonImageView* imageView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonProcessView* processView;</span><br><span class="line"></span><br><span class="line">@property (nonatomic) OUPOperationButtonTransitionManager* transitionManager;</span><br><span class="line"></span><br><span class="line">--- state相关的UI更新接口</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>现在我们想在 Button 中额外增加一种情况的话，我们需要在OUPOperationButtonTransitionManager 中定义新的 state 和事件，在OUPOperationButton+FSM 中定义对应的UI更新。这样明显比一股脑的全塞在Button 中要清晰的多。</p>
+
+        
+      </div>
+    </div>
+
+  
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2018 G.O.D的技术博客 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

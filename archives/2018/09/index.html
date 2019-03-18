@@ -1,16 +1,90 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
-<title>
   
-    Archive: 2018/9
   
-</title>
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="G.O.D的技术博客">
@@ -21,15 +95,43 @@
 <meta name="twitter:title" content="G.O.D的技术博客">
 
 
-  <link rel="alternative" href="/atom.xml" title="G.O.D的技术博客" type="application/atom+xml">
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="canonical" href="http://yoursite.com/archives/2018/09/"/>
 
 
-<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="/styles/main.css">
+
+
+
+  <title>归档 | G.O.D的技术博客</title>
+  
+
+
 
 
 
@@ -37,346 +139,531 @@
 
 
 </head>
-<body
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    class="monochrome"
   
-  >
-  <div class="mobile-header">
-  <button class="sidebar-toggle" type="button">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="title" href="/">G.O.D的技术博客</a>
+    
+  
+
+  <div class="container sidebar-position-left page-archive">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G.O.D的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">小舟从此逝 代码寄余生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-  <div class="main-container">
-    <div class="sidebar">
-  <div class="header">
-    <h1 class="title"><a href="/">G.O.D的技术博客</a></h1>
-    
-      <p class="subtitle">
-        小舟从此逝 代码寄余生
-      </p>
-    
-    <div class="info">
-      <div class="content">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
+      <span class="archive-page-counter">
         
         
-          <div class="author">左博杨</div>
         
+          
+        
+        嗯..! 目前共计 8 篇日志。 继续努力。
+      </span>
+
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/" itemprop="url">
+              
+                <span itemprop="name">Button的代码重构：用状态机来管理状态</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-14T15:20:01+08:00"
+              content="2018-09-14" >
+          09-14
+        </time>
       </div>
+
+    </header>
+  </article>
+
+
+
       
-        <div class="avatar">
-          
-            <a href="/about"><img src="/images/author_avatar.JPG"></a>
-          
-        </div>
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/06/记一次CATextLayer的使用心得/" itemprop="url">
+              
+                <span itemprop="name">记一次CATextLayer的使用心得</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-06T16:40:31+08:00"
+              content="2018-09-06" >
+          09-06
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/04/Type Inference with __auto_type in Objective-C/" itemprop="url">
+              
+                <span itemprop="name">Type Inference with __auto_type in Objective-C</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-04T22:47:31+08:00"
+              content="2018-09-04" >
+          09-04
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
   </div>
-  <div class="body">
-    
-      
-        <ul class="nav">
+  
+  
+  
+
+  
+
+
+
+          </div>
           
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+              <img class="site-author-image" itemprop="image"
+                src="/images/author_avatar.JPG"
+                alt="左博杨" />
+            
+              <p class="site-author-name" itemprop="name">左博杨</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
                 
-              </li>
-            
-          
-            
-              <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/BoYangZuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
                 
-              </li>
-            
-          
-            
-              <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">7</span></li></ul>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="/" title="Homepage">Homepage</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/archives" title="By Year">By Year</a>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="https://github.com/BoYangZuo" title="Github" target="_blank" rel="noopener">Github</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="https://www.jianshu.com/u/e19c4fb93a90" title="简书" target="_blank" rel="noopener">简书</a>
-              </li>
-            
-          
-        </ul>
-      
-    
-  </div>
-</div>
-
-    <div class="main-content">
-      
-        <div style="max-width: 1000px">
-      
+                  <span class="links-of-author-item">
+                    <a href="mailto:zby1004@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="ow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>ow</a>
+                  </span>
+                
+            </div>
           
 
-  
-  
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
+          
+          
+
+          
+          
+
+          
+
         </div>
-        <div class="post-list">
-    
-  
+      </section>
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/" >
-  Button的代码重构：用状态机来管理状态
-</a>
-
-      </h3>
       
 
-      <div class="article-info">
-        <a href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/"><span class="article-date">
-  2018-09-14
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>最近几周的时间都在重构一个控件。仿照 AppStore 中的下载效果写的一个按钮。写篇文章记录一下心得体会。</p>
-<p>文章分为重构前，为什么重构，以及重构后三部分去叙述代码层面的设计思想。这里规避了繁琐的业务逻辑，以及为了解决实际应用场景中 cell 的复用而做的一些处理，仅仅聚焦于类的职责设计。</p>
-<p>先看一下效果图</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1501971-e8504a3fd10be529.gif?imageMogr2/auto-orient/strip" alt="IMG_1079.TRIM.gif"></p>
-<h2 id="重构前的代码"><a href="#重构前的代码" class="headerlink" title="重构前的代码"></a>重构前的代码</h2><h4 id="UPDownloadButtonDefines-h"><a href="#UPDownloadButtonDefines-h" class="headerlink" title="UPDownloadButtonDefines.h"></a>UPDownloadButtonDefines.h</h4><p>UPDownloadButtonDefines.h 中用枚举定义了 DownloadButton 的 state，每种状态对应一种UI形态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSUInteger, EUPDownloadButtonState) &#123;</span><br><span class="line">    nUPDownloadButtonStateIdle, //闲置状态，等待下载</span><br><span class="line">    nUPDownloadButtonStatePending, //开始下载，还没有接收到数据</span><br><span class="line">    nUPDownloadButtonStateDownloading, //接收到数据</span><br><span class="line">    nUPDownloadButtonStateDownloaded, //下载完成</span><br><span class="line"></span><br><span class="line">    nUPDownloadButtonStateDefault = nUPDownloadButtonStateIdle,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h4 id="OUPDownloadButton"><a href="#OUPDownloadButton" class="headerlink" title="OUPDownloadButton"></a>OUPDownloadButton</h4><p>OUPDownloadButton 继承自 UIView，它是整个库的核心。它负责：</p>
-<ol>
-<li>初始化一些必要的元素： 比如 OUPDownloadButtonTitleView ， 图片，UIControl，转圈图层，进度环图层等。</li>
-<li>处理点击事件。</li>
-<li>管理 state。</li>
-<li>管理 state 相关的 UI 代码。</li>
-</ol>
-<p>看一下 OUPDownloadButton 的头文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@protocol OUPDownloadButtonDelegate&lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@optional</span><br><span class="line">- (void)downloadButtonDidStartDownloading:(OUPDownloadButton*)downloadButton;</span><br><span class="line">- (void)downloadButtonDidCancelDownloading:(OUPDownloadButton*)downloadButton;</span><br><span class="line">- (void)downloadButtonDidTapAfterDownload:(OUPDownloadButton*)downloadButton;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface OUPDownloadButton : UIView</span><br><span class="line"></span><br><span class="line">@property (nonatomic) OUPDownloadButtonConfiguration* configuration;</span><br><span class="line"></span><br><span class="line">// idle -&gt; pending -&gt; downloading -&gt; downloaded</span><br><span class="line">@property (nonatomic, readonly) EUPDownloadButtonState state;</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) id&lt;OUPDownloadButtonDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">// 0.0 ~ 1.0</span><br><span class="line">@property (nonatomic) CGFloat progress;</span><br><span class="line"></span><br><span class="line">- (void)start;</span><br><span class="line">- (void)cancel;</span><br><span class="line">- (void)complete;</span><br><span class="line">- (void)restoreWithState:(EUPDownloadButtonState)state progress:(CGFloat)progress;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<ul>
-<li>DownloadButton 通过代理来建立与 Controller 的联系。通知任务下载开始，结束，以及取消时的事件。</li>
-<li>持有 state 属性，因为不希望在 DownloadButton 以外的地方更改 state ，所以设计成了 readonly。</li>
-<li>提供 start 等方法给外界调用，切换 DownloadButton 的状态。</li>
-</ul>
-<h4 id="OUPDownloadButtonConfiguration"><a href="#OUPDownloadButtonConfiguration" class="headerlink" title="OUPDownloadButtonConfiguration"></a>OUPDownloadButtonConfiguration</h4><p>OUPDownloadButtonConfiguration 用于配置 DownloadButton 在不同状态时的 UI 样式（比如 图片 字体 颜色等）</p>
-<h4 id="OUPDownloadButtonTitleView"><a href="#OUPDownloadButtonTitleView" class="headerlink" title="OUPDownloadButtonTitleView"></a>OUPDownloadButtonTitleView</h4><p>OUPDownloadButtonTitleView 是按钮的标题视图，它包含了一个 Calyer 和 UILabel 。因为 OUPDownloadButton 的 UI 形态在切换的时候会有一些过度动画，这个过度动画主要由 OUPDownloadButtonTitleView 来负责，所以单独抽个类出来也易于管理和设计接口。</p>
-<p>看一下 DownloadButton 的点击事件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (void)onTap:(id)sender</span><br><span class="line">&#123;</span><br><span class="line">    switch (_state)</span><br><span class="line">    &#123;</span><br><span class="line">        case nUPDownloadButtonStateIdle:</span><br><span class="line">            [self exitIdle];</span><br><span class="line">            [self enterPendingAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStatePending:</span><br><span class="line">            [self cancelAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStateDownloading:</span><br><span class="line">            [self cancelAndNotify:YES];</span><br><span class="line">            break;</span><br><span class="line">        case nUPDownloadButtonStateDownloaded:</span><br><span class="line">            [self tappedAfterDownload];</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            SCShouldNotReachAssert();</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当我们点击 DownloadButton ，代码的执行思路大致是这样：根据当前的不同 state执行不同的方法，并手动更新 state 的值。比如当按钮处于 idle 的时候，点击进入 pending。当按钮处于 pending 或是 downloading 的时候，点击取消下载，恢复到idle。</p>
-<p>MVC下的实际使用：<br><img src="https://upload-images.jianshu.io/upload_images/1501971-465451a0f95a2de5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800" alt="屏幕快照 2018-10-15 下午3.08.22.png"></p>
-<h3 id="为什么需要重构"><a href="#为什么需要重构" class="headerlink" title="为什么需要重构"></a>为什么需要重构</h3><p>看完第一节我们就很清楚 DownloadButton 这个类的臃肿性了。如果我们需要额外增加一种状态，那么我们需要在 DownloadButton 中增加额外的状态判断和切换，对应的UI更新。这样 DownloadButton 会变得越来越难以维护，代码的可读性也会越来越差。</p>
-<p>DownloadButton 既然是一个 UIView，那么它就应该只负责 UI 层面的事情，state可以交给专业的类去管理，这样既可以减轻 DownloadButton 的负担，又可以让DownloadButton 遵守面向对象的单一原则。所以 DownloadButton 中实际上不应该出现和 state 有关的任何代码。</p>
-<p>或许我们可以做的更多。UI层面的事情我们也可以用 Category 来进一步管理。将state 相关的 UI 更新抽到分类中来专门维护。</p>
-<p>所以我们希望重构之后的 DownloadButton 既不用关心 state，又不用关心 state 相关的 UI 更新。</p>
-<h3 id="重构后的代码"><a href="#重构后的代码" class="headerlink" title="重构后的代码"></a>重构后的代码</h3><p>现在来看下重构后的库结构：</p>
-<p>首先将类的命名改了： DownloadButton -&gt; OperationButton 因为项目中可能会在其他场景下用到此类的 button，比如内购的支付按钮。所以命名上我们希望这个按钮能够适应所有可能的业务场景而不局限于下载。</p>
-<h4 id="OUPOperationButtonImageView"><a href="#OUPOperationButtonImageView" class="headerlink" title="OUPOperationButtonImageView"></a>OUPOperationButtonImageView</h4><p>将之前的图片抽了一个单独的类出来 便于管理 结构更加清晰 也方便于接口设计。</p>
-<h4 id="OUPOperationButtonProcessView"><a href="#OUPOperationButtonProcessView" class="headerlink" title="OUPOperationButtonProcessView"></a>OUPOperationButtonProcessView</h4><p>将之前的转圈图层和进度环图层抽了一个单独的类出来 便于管理 结构更加清晰 也方便于接口设计。</p>
-<h4 id="OUPOperationButtonTransitionManager"><a href="#OUPOperationButtonTransitionManager" class="headerlink" title="OUPOperationButtonTransitionManager"></a>OUPOperationButtonTransitionManager</h4><p>OUPOperationButtonTransitionManager 负责状态的维护。<br>OUPOperationButtonTransitionManager 里面维护着一个<a href="https://github.com/blakewatters/TransitionKit" target="_blank" rel="noopener">状态机</a>，在OUPOperationButtonTransitionManager 中我们可以定义各种状态及事件。状态机将状态和事件关联起来。</p>
-<p>比如按钮从 state A切换到了 state B。那么我们将 A 称为 SourceState 将 B 称为DestinationState。我们将这个转换状态的过程定义为事件。事件的初始化依赖于SourceState 和 DestinationState。</p>
-<p>每个事件的 SourceState 可以有多个，但是 DestinationState 只能有一个。当我们想切换状态的时候，就可以让状态机执行一个以目标状态为 DestinationState 的一个事件。如果当前状态是 SourceState 中的一个，那么这个事件将被正常执行。</p>
-<p>比如 按钮从点击下载开始的状态转换过程为：</p>
-<p>StateOriginal -&gt; StateReady -&gt; StateExecuting -&gt; StateFinished</p>
-<p>当我们想取消下载的时候  状态机会去执行一个 cancel 事件。当按钮在 StateReady的时候你可以 cancel，当按钮在 StateExecuting 的时候你也可以 cancel。但是无论你是从哪种状态 cancel的，cancel 事件成功后状态都会变成 StateOriginal。这里的StateReady 和 StateExecuting 叫做 SourceState。StateOriginal 叫做DestinationState。</p>
-<p>那么问题来了，状态的管理问题是解决了，Button 已经不再自己维护状态了。不过如何通知 Button 在状态切换的时候更新UI呢？</p>
-<p>嗯… 说的直白一点。我们对 OUPOperationButtonTransitionManager 这个类的期望是：</p>
-<ol>
-<li>帮我们管理好 Button 的状态 当外界的 view action 到来时 OUPOperationButtonTransitionManager 会帮我们切换对应的状态</li>
-<li>状态切换时能够及时通知 Button 去更新 UI </li>
-</ol>
-<p>我们来看一下 OUPOperationButtonTransitionManager 的头文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@interface OUPOperationButtonTransitionManager : NSObject</span><br><span class="line"></span><br><span class="line">@property (nonatomic, readonly) EUPOperationButtonState currentState;</span><br><span class="line"></span><br><span class="line">- (instancetype)initWithHandlers:(NSDictionary*)handlers;</span><br><span class="line"></span><br><span class="line">- (void)fireEventWithTargetState:(EUPOperationButtonState)state;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>可以看到OUPOperationButtonTransitionManager有一个初始化方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (instancetype)initWithHandlers:(NSDictionary*)handlers;</span><br></pre></td></tr></table></figure>
-<p>handlers 以 state 作为 key 对应的 UI 更新事件（闭包）作为 value。OUPOperationButtonTransitionManager 会在状态切换的时候根据一个状态的进入或退出去执行对应的闭包。</p>
-<p>示例代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (void)setDidEnterStateActionForState:(TKState*)state</span><br><span class="line">&#123;</span><br><span class="line">  SC_WEAKIFY(self);</span><br><span class="line">  [state setDidEnterStateBlock:^(TKState* state, TKTransition* transition) &#123;</span><br><span class="line">      SC_STRONGIFY(self);</span><br><span class="line">      //state的字符串作为key从handler中取出对应的闭包 然后执行。</span><br><span class="line">      self.didEnterStateHandlers[state.name](nil);</span><br><span class="line">  &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="OUPOperationButton-FSM"><a href="#OUPOperationButton-FSM" class="headerlink" title="OUPOperationButton+FSM"></a>OUPOperationButton+FSM</h4><p>OUPOperationButton+FSM 的职责：</p>
-<ol>
-<li>维护状态相关的 UI 代码</li>
-<li>创建 OUPOperationButtonTransitionManager</li>
-<li>给外界提供更改状态的接口</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@interface OUPOperationButton (FSM)</span><br><span class="line"></span><br><span class="line">- (void)setupFSM;</span><br><span class="line">- (void)transitionToTargetState:(EUPOperationButtonState)state;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>在 OUPOperationButton+FSM.m 中我们定义了各种状态切换的 UI 更新代码，那么理所当然，OUPOperationButtonTransitionManager 应该在OUPOperationButton+FSM 中被初始化。</p>
-<h4 id="OUPOperationButton-Internal-h"><a href="#OUPOperationButton-Internal-h" class="headerlink" title="OUPOperationButton_Internal.h"></a>OUPOperationButton_Internal.h</h4><p>OUPOperationButton 拥有了可以管理状态的OUPOperationButtonTransitionManager 以及管理 state 相关的 UI 代码的OUPOperationButton+FSM。不过当我们将 OUPOperationButton 封装成一个静态库的时候，我可不希望将这两个类的头文件暴露出去。因为调用者并不需要知道OUPOperationButton 是怎么实现的。所以这里还需要一个 internal.h 来帮助我们隐藏掉我们不想暴露给外界的头文件。我们将 Button 中的各个控件以及OUPOperationButtonTransitionManager 放到 Internal.h 中供 Button 模块内部调用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;OUPOperationButton.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonImageView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonProcessView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTextView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTransitionManager.h&quot;</span><br><span class="line"></span><br><span class="line">@interface OUPOperationButton ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic) UIControl* backingControl;</span><br><span class="line">@property (nonatomic) OUPOperationButtonTextView* textView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonImageView* imageView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonProcessView* processView;</span><br><span class="line"></span><br><span class="line">@property (nonatomic) OUPOperationButtonTransitionManager* transitionManager;</span><br><span class="line"></span><br><span class="line">--- state相关的UI更新接口</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p>现在我们想在 Button 中额外增加一种情况的话，我们需要在OUPOperationButtonTransitionManager 中定义新的 state 和事件，在OUPOperationButton+FSM 中定义对应的UI更新。这样明显比一股脑的全塞在Button 中要清晰的多。</p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/06/记一次CATextLayer的使用心得/" >
-  记一次CATextLayer的使用心得
-</a>
-
-      </h3>
       
 
-      <div class="article-info">
-        <a href="/2018/09/06/记一次CATextLayer的使用心得/"><span class="article-date">
-  2018-09-06
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>今天优化代码的时候发现了一个好玩的事情。</p>
-<p>需求是实现一个头部显示value值的Slider控件。这个Slider我们是自己绘制的一个UIControl对象，它的trackline和thumbIcon都是我们用layer绘制上去的，因为Calayer本身具有隐性动画，所以最后的效果和系统几乎是完全一致。</p>
-<p>一开始的时候，我就直接用UILabel来绘制这个value。然后将label的size，font以及color等属性暴露给调用者，后来想想size直接放在外面不大好，毕竟别人想调用一个可以显示数值的Slider还需要关心label的大小？</p>
-<p>于是就在实现文件中声明了一个变量，给定了一个宽度（一个我认为足够大的值），但是因为字体的大小不固定，所以label的高度没法确定。一开始想的是在font的set方法中用<code>[valueLabel sizetofit]</code>来计算出label的height。后来我查到了一个UIFont的属性lineHeight，lineHeight可以根据不同font值计算出合适的高度，这个值你只需要调用lineHeight的getter方法就可以拿到了，不用计算，非常方便。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UIFont *font0 = [UIFont systemFontOfSize:15];</span><br><span class="line">UILabel *label0 = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, font0.lineHeight;)];</span><br><span class="line"></span><br><span class="line">UIFont *font1 = [UIFont systemFontOfSize:25];</span><br><span class="line">UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, font1.lineHeight)];</span><br></pre></td></tr></table></figure></p>
-<p>这样高度的问题是解决了，但是调试的时候发现动画有问题。</p>
-<p>因为要实现一个thumb顶部显示滑动值的文本效果，且希望当其他操作事件更改了滑动值的时候，Slider上需要有一个滑动的动画，thumb自然没有问题，但是对于UILabel来说，我尝试了UIView的基本动画，通过<code>[CATransition animationDuration]</code>拿到Calayer的隐式动画时间来设置UIView的显性动画。但是效果看起来不大好。你会发现，UIView动画的执行会比Calayer稍微慢了那么一点点。整个效果看起来就会有点不连续的感觉。</p>
-<p>解决这个问题有两种思路：</p>
-<ol>
-<li>研究Calayer隐式动画的曲线 找出和UIView动画的区别 然后解决</li>
-<li>换掉UILabel 用CATextLayer来绘制文本</li>
-</ol>
-<p>我觉得1的复杂度有点深，所以选择了2。不过关于CATextLayer，也是有一些坑的，花了我快半个小时才将这个效果弄好。</p>
-<p>首先CATextLayer的几个属性比较特别：</p>
-<ul>
-<li>CATextLayer的string属性是一个id类型，但是注释中明确的告诉你，要渲染的文本应该是NSString或NSAttributedString中的一种类型。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* The text to be rendered, should be either an NSString or an</span><br><span class="line"> * NSAttributedString. Defaults to nil. */</span><br><span class="line"></span><br><span class="line">@property(nullable, copy) id string;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>CATextLayer的font属性是一个CFTypeRef类型。你可以传入一个CTFontRef或者CTFontRef类型，或者直接传入一个字体的名称。默认是Helvetica。font属性仅仅用于当字符串类型是NSAttributedString时。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* The font to use, currently may be either a CTFontRef, a CTFontRef,</span><br><span class="line"> * or a string naming the font. Defaults to the Helvetica font. Only</span><br><span class="line"> * used when the `string&apos; property is not an NSAttributedString. */</span><br><span class="line"></span><br><span class="line">@property(nullable) CFTypeRef font;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CATextLayer的fontSize是一个CGFloat类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* The font size. Defaults to 36. Only used when the `string&apos; property</span><br><span class="line"> * is not an NSAttributedString. Animatable (Mac OS X 10.6 and later.) */</span><br><span class="line"></span><br><span class="line">@property CGFloat fontSize;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>foregroundColor用于绘制text的颜色，默认是不透明的白色，仅仅用于string不是一个NSAttributedString类型时</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* The color object used to draw the text. Defaults to opaque white.</span><br><span class="line"> * Only used when the `string&apos; property is not an NSAttributedString.</span><br><span class="line"> * Animatable (Mac OS X 10.6 and later.) */</span><br><span class="line"></span><br><span class="line">@property(nullable) CGColorRef foregroundColor;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>text的绘制位置，居中，居右等，类似于UILabel的textAlignment</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/* Describes how individual lines of text are aligned within the layer</span><br><span class="line"> * bounds. The possible options are `natural&apos;, `left&apos;, `right&apos;,</span><br><span class="line"> * `center&apos; and `justified&apos;. Defaults to `natural&apos;. */</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其次换成了CATextLayer之后，我将font和fontSize以及foregroundColor属性暴露了出去，因为之前可以通过UIFont的lineHeight属性直接拿到UILabel对于不同字体自适应的高度值，所以这里没有用UIFont后，就换成了<code>sizeWithAttributes:</code>或者<code>sizeWithFont:</code>方法来搞定。</p>
-<p>后来codeReview的时候，我觉得完全可以和以前一样，直接将UIFont和UIColor暴露给外部，因为在UIFont的set方法中，通过<code>CGFontCreateWithFontName((__bridge CFStringRef)labelFont.fontName)</code>和<code>labelFont.pointSize</code>就可以拿到对应的CATextLayer的font和fontSize的属性，内部声明两个变量记录就好了。因为调用者其实应该是更熟悉UIFont的，而且只传一个属性简便的多。对于UIColor，set方法中取出它的CGColor就好，之前设置的暴露参数都不用修改，只需要内部做一下改动。</p>
-
-        
-      </div>
     </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左博杨</span>
 
   
-
-  
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
     
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/04/Type Inference with __auto_type in Objective-C/" >
-  Type Inference with __auto_type in Objective-C
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2018/09/04/Type Inference with __auto_type in Objective-C/"><span class="article-date">
-  2018-09-04
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>写<code>Objective-C</code>的时候，因为要遵循驼峰命名法，所以写一个变量之前，首先要想如何优雅的为其命名，然后再用对应的类型去接收它。很多时候，这个类型需要重复的去写，非常麻烦。</p>
-<p>我们知道在<code>Swift</code>里面，有两种申明变量的方式：<code>let</code> 和 <code>var</code><br><code>let</code> 用于定义常量，定义完后不能修改<br><code>var</code> 用于定义变量，定义完后可以修改</p>
-<p>申明常量或者变量的同时如果赋值的话，编译器会自动推断类型，列如<br><code>let age0 = 10</code><br><code>var age1 = &quot;10&quot;</code><br><code>age0</code>为<code>int</code>型，<code>age1</code>为<code>String</code>型</p>
-<p>######那在<code>Objective-C</code>中如何做到这样呢？<br>得益于苹果在<code>Xcode8</code>中已经支持类型推倒，我们就可以用<code>C</code>的<code>__auto_type</code>和<code>C++</code>的<code>auto</code>来定义一个<code>宏let</code> 这样在项目了我们就可以用<code>let</code>来接收一切类型了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#if !defined(var)</span><br><span class="line">#if defined(__cplusplus)</span><br><span class="line">#define var auto</span><br><span class="line">#else</span><br><span class="line">#define var __auto_type</span><br><span class="line">#endif</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if !defined(let)</span><br><span class="line">#define let const var</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<p>比如<br>定义一个结构体类型 <code>let trackFrame = self.trackLayer.frame;</code><br>定义一个数组类型 <code>let selected = [self indexPathsForSelectedItems];</code><br>定义一个字符串类型 <code>let title = @&quot;i am a text&quot;;</code></p>
-<p>关于<code>Type Inference with __auto_type</code>的更多信息：<br><a href="https://intii.com/2017/write-objc-like-writing-swift/" target="_blank" rel="noopener">https://intii.com/2017/write-objc-like-writing-swift/</a><br><a href="https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372" target="_blank" rel="noopener">https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372</a></p>
-
-        
-      </div>
-    </div>
-
-  
-
-
-
-
-
-
-          <div class="main-footer">
-  
-    © 2019 G.O.D的技术博客 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
-      
-        </div>
-      
-    </div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
   </div>
-  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
-<script src="/scripts/main.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

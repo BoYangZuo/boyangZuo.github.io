@@ -1,16 +1,90 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
-<title>
   
-    Archive: 2018/7
   
-</title>
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="G.O.D的技术博客">
@@ -21,15 +95,43 @@
 <meta name="twitter:title" content="G.O.D的技术博客">
 
 
-  <link rel="alternative" href="/atom.xml" title="G.O.D的技术博客" type="application/atom+xml">
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="canonical" href="http://yoursite.com/archives/2018/07/"/>
 
 
-<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="/styles/main.css">
+
+
+
+  <title>归档 | G.O.D的技术博客</title>
+  
+
+
 
 
 
@@ -37,217 +139,457 @@
 
 
 </head>
-<body
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
   
-    class="monochrome"
   
-  >
-  <div class="mobile-header">
-  <button class="sidebar-toggle" type="button">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="title" href="/">G.O.D的技术博客</a>
+    
+  
+
+  <div class="container sidebar-position-left page-archive">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G.O.D的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">小舟从此逝 代码寄余生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-  <div class="main-container">
-    <div class="sidebar">
-  <div class="header">
-    <h1 class="title"><a href="/">G.O.D的技术博客</a></h1>
-    
-      <p class="subtitle">
-        小舟从此逝 代码寄余生
-      </p>
-    
-    <div class="info">
-      <div class="content">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
+      <span class="archive-page-counter">
         
         
-          <div class="author">左博杨</div>
         
+          
+        
+        嗯..! 目前共计 8 篇日志。 继续努力。
+      </span>
+
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/07/31/Runloop知识点小集/" itemprop="url">
+              
+                <span itemprop="name">Runloop知识点小集</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-07-31T21:37:16+08:00"
+              content="2018-07-31" >
+          07-31
+        </time>
       </div>
+
+    </header>
+  </article>
+
+
+
       
-        <div class="avatar">
-          
-            <a href="/about"><img src="/images/author_avatar.JPG"></a>
-          
-        </div>
-      
+
     </div>
   </div>
-  <div class="body">
-    
-      
-        <ul class="nav">
+  
+  
+  
+
+  
+
+
+
+          </div>
           
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <li class="category-list-container">
-                <a href="javascript:;">Category</a>
+              <img class="site-author-image" itemprop="image"
+                src="/images/author_avatar.JPG"
+                alt="左博杨" />
+            
+              <p class="site-author-name" itemprop="name">左博杨</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
                 
-              </li>
-            
-          
-            
-              <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/BoYangZuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
                 
-              </li>
-            
-          
-            
-              <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">7</span></li></ul>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="/" title="Homepage">Homepage</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/archives" title="By Year">By Year</a>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="https://github.com/BoYangZuo" title="Github" target="_blank" rel="noopener">Github</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="https://www.jianshu.com/u/e19c4fb93a90" title="简书" target="_blank" rel="noopener">简书</a>
-              </li>
-            
-          
-        </ul>
-      
-    
-  </div>
-</div>
-
-    <div class="main-content">
-      
-        <div style="max-width: 1000px">
-      
+                  <span class="links-of-author-item">
+                    <a href="mailto:zby1004@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="ow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>ow</a>
+                  </span>
+                
+            </div>
           
 
-  
-  
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
+          
+          
+
+          
+          
+
+          
+
         </div>
-        <div class="post-list">
-    
-  
+      </section>
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/07/31/Runloop知识点小集/" >
-  Runloop知识点小集
-</a>
-
-      </h3>
       
 
-      <div class="article-info">
-        <a href="/2018/07/31/Runloop知识点小集/"><span class="article-date">
-  2018-07-31
-</span>
-</a>
-        
+      
 
-        
+    </div>
+  </aside>
 
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="一-Runloop简介"><a href="#一-Runloop简介" class="headerlink" title="一. Runloop简介"></a>一. Runloop简介</h2><ol>
-<li>RunLoop字面意思就是一个跑起来的循环,我们的程序之所以能一直运行不会无端退出就是因为RunLoop的存在。</li>
-<li>RunLoop用来处理程序运行过程中出现的各种事件，从而保持程序的持续运行。而且在没有事件处理的时候，会进入睡眠模式，从而节省CPU资源，提高程序性能。</li>
-</ol>
-<h2 id="二-Runloop的作用"><a href="#二-Runloop的作用" class="headerlink" title="二. Runloop的作用"></a>二. Runloop的作用</h2><h4 id="1-保持程序的一直运行"><a href="#1-保持程序的一直运行" class="headerlink" title="1. 保持程序的一直运行"></a>1. 保持程序的一直运行</h4><p>每个iOS程序都有一个main函数的入口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, char * argv[]) &#123;</span><br><span class="line">@autoreleasepool &#123;</span><br><span class="line">return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>程序之所以能一直运行是因为UIApplicationMain函数创建了一个Runloop维持着程序运行。<br>如果我们将main函数改成下面这样，那么程序一旦启动就会结束。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, char * argv[]) &#123;</span><br><span class="line">@autoreleasepool &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-处理程序运行中的各种事件："><a href="#2-处理程序运行中的各种事件：" class="headerlink" title="2. 处理程序运行中的各种事件："></a>2. 处理程序运行中的各种事件：</h4><p>触摸事件<br>定时器事件<br>手势识别<br>界面刷新<br>网络请求<br>Selector<br>…</p>
-<h2 id="三-获取Runloop对象"><a href="#三-获取Runloop对象" class="headerlink" title="三. 获取Runloop对象"></a>三. 获取Runloop对象</h2><p>iOS中有两套API可以访问和使用Runloop：</p>
-<ol>
-<li><p>Foundation：NSRunloop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取当前线程的RunLoop对象</span><br><span class="line">NSRunLoop *runloop = [NSRunLoop currentRunLoop];</span><br><span class="line">//获取主线程的RunLoop对象</span><br><span class="line">NSRunLoop *runloop2 = [NSRunLoop mainRunLoop];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Core Foundation：CFRunloopRef</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取当前线程的RunLoop对象</span><br><span class="line">CFRunLoopRef runloop3 = CFRunLoopGetCurrent();</span><br><span class="line">//获取主线程的RunLoop对象</span><br><span class="line">CFRunLoopRef runloop4 = CFRunLoopGetMain();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>NSRunloop是基于CFRunloopRef的OC包装。</p>
-<h2 id="四-Runloop与线程"><a href="#四-Runloop与线程" class="headerlink" title="四. Runloop与线程"></a>四. Runloop与线程</h2><ol>
-<li>每条线程都有唯一的一个与之对应的RunLoop对象</li>
-<li>RunLoop保存在一个全局的Dictionary里，线程作为key，RunLoop作为value</li>
-<li>线程刚创建时并没有RunLoop对象，RunLoop会在第一次获取它时创建</li>
-<li>RunLoop会在线程结束时销毁</li>
-<li>主线程的RunLoop已经自动获取（创建），子线程默认没有开启RunLoop</li>
-</ol>
-<h2 id="五-Runloop相关的类"><a href="#五-Runloop相关的类" class="headerlink" title="五. Runloop相关的类"></a>五. Runloop相关的类</h2><p><strong>CFRunLoopRef</strong>：Runloop类<br><strong>CFRunLoopModeRef</strong>：CFRunLoopMode类<br><strong>CFRunLoopSourceRef</strong>：是事件产生的地方。Source有两个版本：Source0 和 Source1。<br><strong>CFRunLoopTimerRef</strong>：基于时间的触发器，它是NSTimer的C语言版本，可以混用。其包含一个时间长度和一个回调（函数指针）。当其加入到 RunLoop 时，RunLoop会注册对应的时间点，当时间点到时，RunLoop会被唤醒以执行那个回调。<br><strong>CFRunLoopObserverRef</strong>： 是观察者，每个 Observer 都包含了一个回调（函数指针），当 RunLoop 的状态发生变化时，观察者就能通过回调接受到这个变化。</p>
-<p>CFRunLoop的源码结构（__CFRunLoop结构体中包含的元素不单单是这几个，其他不重要的就没有往里面写了，CFRunLoopMode的源码结构同理）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct __CFRunLoop &#123;</span><br><span class="line">pthread_t _pthread;</span><br><span class="line">CFMutableSetRef _commonModes;</span><br><span class="line">CFMutableSetRef _commonModeItems;</span><br><span class="line">CFRunLoopModeRef _currentMode;</span><br><span class="line">CFMutableSetRef _modes;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>pthread_t _pthread</strong>：Runloop对象当前所处的线程。<br><strong>CFMutableSetRef _commonModes</strong>：_commonModes是一个集合，里面装的是通用的模式，即Runloop对象可以运行的模式。<br><strong>CFMutableSetRef _commonModeItems</strong>：_commonModeItems也是一个集合，里面装的是通用模式中的source0，source1，obersvers，timers等对象。<br><strong>CFRunLoopModeRef _currentMode</strong>：Runloop对象当前所处的模式。<br><strong>CFMutableSetRef _modes</strong>：Runloop对象可以使用的模式集合。</p>
-<p>CFRunLoopMode的源码结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct __CFRunLoopMode &#123;</span><br><span class="line">CFStringRef _name;</span><br><span class="line">CFMutableSetRef _sources0;</span><br><span class="line">CFMutableSetRef _sources1;</span><br><span class="line">CFMutableArrayRef _observers;</span><br><span class="line">CFMutableArrayRef _timers;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>CFStringRef _name</strong>：字符串名称<br><strong>CFMutableSetRef _sources0</strong>：包含了一个回调（函数指针），它并不能主动触发事件。使用时，需要将这个 Source 标记为待处理，然后唤醒 RunLoop，让其处理这个事件。<br><strong>CFMutableSetRef _sources1</strong>：包含了一个 mach_port 和一个回调（函数指针），被用于通过内核和其他线程相互发送消息。 能主动唤醒 RunLoop 的线程。<br><strong>CFMutableArrayRef _observers</strong>：_observers集合<br><strong>CFMutableArrayRef _timers</strong>：_timers集合</p>
-<h2 id="六-常见的几种CFRunLoopMode"><a href="#六-常见的几种CFRunLoopMode" class="headerlink" title="六. 常见的几种CFRunLoopMode"></a>六. 常见的几种CFRunLoopMode</h2><ol>
-<li>kCFRunLoopDefaultMode（NSDefaultRunLoopMode）：App的默认Mode，通常主线程是在这个Mode下运行</li>
-<li>UITrackingRunLoopMode：界面跟踪 Mode，用于 ScrollView 追踪触摸滑动，保证界面滑动时不受其他 Mode 影响</li>
-<li>kCFRunLoopCommonModes：并不是真正的CFRunLoopMode，而是代表了所有标有common属性的CFRunLoopMode，是一个模式集合。当绑定一个事件源到这个模式集合的时候就相当于绑定到了集合内的每一个模式。上面两个Mode就标有common属性。</li>
-</ol>
-<h2 id="七-NSTimer在UITrackingRunLoopMode模式下的Runloop中失效的问题"><a href="#七-NSTimer在UITrackingRunLoopMode模式下的Runloop中失效的问题" class="headerlink" title="七. NSTimer在UITrackingRunLoopMode模式下的Runloop中失效的问题"></a>七. NSTimer在UITrackingRunLoopMode模式下的Runloop中失效的问题</h2><p>NSTimer的创建方式有两种：<br>scheduledTimerWithTimeInterval：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__block NSInteger count = 0;</span><br><span class="line">NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) &#123;</span><br><span class="line">NSLog(@&quot;%ld&quot;,(long)count++);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
-<p>timerWithTimeInterval：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__block NSInteger count = 0;\</span><br><span class="line">NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) &#123;</span><br><span class="line">NSLog(@&quot;%ld&quot;,(long)count++);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure></p>
-<p>运行上面两段代码，你会发现第一种方式会一直正常的执行打印信息，而第二种创建方式不会有任何打印信息。因为通过scheduledTimerWithTimeInterval创建的timer会被自动加入到kCFRunLoopDefaultMode下的Runloop中执行(就像方法名一样该Timer被安排好执行了)。而通过timerWithTimeInterval：创建的timer需要手动添加到Runloop中执行。</p>
-<p>所以通过scheduledTimerWithTimeInterval创建的timer在界面滚动的时候会停止打印，因为界面一旦滚动，当前Runloop会自动切换到UITrackingRunLoopMode模式，而此时timer只能在kCFRunLoopDefaultMode中执行，所以才会失效。<br>我们可以将创建出来的timer添加到通用模式中执行，这样不管当前Runloop处于哪种模式，timer的执行都不会受到影响：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];</span><br></pre></td></tr></table></figure></p>
-<p>这里需要注意的是，如果Timer是添加到特定模式下的Runloop中，那么timer对象会存储在CFRunLoopMode的CFMutableArrayRef _timers中。如果Timer是添加到通用模式下的Runloop中，timer对象会储存在CFRunLoop的CFMutableSetRef _commonModeItems中。</p>
-<p>CFRunloopRef的源码是完全公开的，可以通过以下链接访问下载源码： <a href="https://opensource.apple.com/tarballs/CF/" target="_blank" rel="noopener">https://opensource.apple.com/tarballs/CF/</a></p>
 
         
       </div>
-    </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左博杨</span>
 
   
-
-
-
-
-
-
-          <div class="main-footer">
-  
-    © 2019 G.O.D的技术博客 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
-      
-        </div>
-      
-    </div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
   </div>
-  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
-<script src="/scripts/main.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>

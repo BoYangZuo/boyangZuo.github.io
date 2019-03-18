@@ -1,16 +1,90 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
-<title>
   
-    G.O.D的技术博客
   
-</title>
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="G.O.D的技术博客">
@@ -21,15 +95,43 @@
 <meta name="twitter:title" content="G.O.D的技术博客">
 
 
-  <link rel="alternative" href="/atom.xml" title="G.O.D的技术博客" type="application/atom+xml">
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
 
-  <link rel="icon" href="/favicon.png">
+  <link rel="canonical" href="http://yoursite.com/"/>
 
 
-<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
-<link rel="stylesheet" href="/styles/main.css">
+
+
+
+  <title>G.O.D的技术博客</title>
+  
+
+
 
 
 
@@ -37,142 +139,218 @@
 
 
 </head>
-<body
-  
-    class="monochrome"
-  
-  >
-  <div class="mobile-header">
-  <button class="sidebar-toggle" type="button">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="title" href="/">G.O.D的技术博客</a>
-</div>
 
-  <div class="main-container">
-    <div class="sidebar">
-  <div class="header">
-    <h1 class="title"><a href="/">G.O.D的技术博客</a></h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
     
-      <p class="subtitle">
-        小舟从此逝 代码寄余生
-      </p>
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    <div class="info">
-      <div class="content">
-        
-        
-          <div class="author">左博杨</div>
-        
-      </div>
-      
-        <div class="avatar">
-          
-            <a href="/about"><img src="/images/author_avatar.JPG"></a>
-          
-        </div>
-      
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">G.O.D的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">小舟从此逝 代码寄余生</p>
+      
   </div>
-  <div class="body">
-    
-      
-        <ul class="nav">
-          
-            
-              <li class="category-list-container">
-                <a href="javascript:;">Category</a>
-                
-              </li>
-            
-          
-            
-              <li class="tag-list-container">
-                <a href="javascript:;">Tag</a>
-                
-              </li>
-            
-          
-            
-              <li class="archive-list-container">
-                <a href="javascript:;">Archive</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">7</span></li></ul>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="/" title="Homepage">Homepage</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="/archives" title="By Year">By Year</a>
-              </li>
-            
-          
-        </ul>
-      
-        <ul class="nav">
-          
-            
-              <li>
-                <a href="https://github.com/BoYangZuo" title="Github" target="_blank" rel="noopener">Github</a>
-              </li>
-            
-          
-            
-              <li>
-                <a href="https://www.jianshu.com/u/e19c4fb93a90" title="简书" target="_blank" rel="noopener">简书</a>
-              </li>
-            
-          
-        </ul>
-      
-    
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
-    <div class="main-content">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-        <div style="max-width: 1000px">
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/如何更好的自定义 UISegmentedControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/17/如何更好的自定义 UISegmentedControl/" itemprop="url">如何更好的自定义 UISegmentedControl</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T17:39:31+08:00">
+                2019-03-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-17T17:45:09+08:00">
+                2019-03-17
+              </time>
+            
+          </span>
+
           
 
-  
-  
-    <div class="post-list">
-  
+          
+            
+          
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/03/17/如何更好的自定义 UISegmentedControl/" >
-  如何更好的自定义 UISegmentedControl
-</a>
+          
+          
 
-      </h3>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,109
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-      <div class="article-info">
-        <a href="/2019/03/17/如何更好的自定义 UISegmentedControl/"><span class="article-date">
-  2019-03-17
-</span>
-</a>
+      
         
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>前几天因为业务需求，随手写了一个类似于 <strong>UISegmentedControl</strong> 的控件，写完后觉得代码没什么毛病，简洁好用，可读性也好，也仅仅只有 200 行代码。后来 <strong>Code Review</strong> 的时候，leader 说了一些观点让我觉得很受用。也让我觉得自定义 <strong>UI</strong> 控件其实需要更多的思考，而不仅仅是功能上面的实现。所以写篇文章记录下来。大致效果如下：</p>
+          
+            <p>前几天因为业务需求，随手写了一个类似于 <strong>UISegmentedControl</strong> 的控件，写完后觉得代码没什么毛病，简洁好用，可读性也好，也仅仅只有 200 行代码。后来 <strong>Code Review</strong> 的时候，leader 说了一些观点让我觉得很受用。也让我觉得自定义 <strong>UI</strong> 控件其实需要更多的思考，而不仅仅是功能上面的实现。所以写篇文章记录下来。大致效果如下：</p>
 <img src="/2019/03/17/如何更好的自定义%20UISegmentedControl/SegmentedControl.gif" title="SegmentedControl">
 <p>因为代码不多，就直接放到文章里了。</p>
 <h5 id="类的设计思路："><a href="#类的设计思路：" class="headerlink" title="类的设计思路："></a>类的设计思路：</h5><ol>
@@ -237,41 +415,168 @@
 <li>苹果为我们提供了很好的 <strong>AutoLayout</strong> 机制，应当好好使用，并且 <strong>WWCD2018</strong> 上也提到了 <strong>AutoLayout</strong> 性能会得到本质性的改善。重复计算 <strong>frame</strong> 这种事情除非必要，比如设置 <strong>layer</strong> 的圆角等，应该学会尽量用 <strong>AutoLayout</strong> 去解决问题。</li>
 </ol>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/" >
-  Button的代码重构：用状态机来管理状态
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/"><span class="article-date">
-  2018-09-14
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <p>最近几周的时间都在重构一个控件。仿照 AppStore 中的下载效果写的一个按钮。写篇文章记录一下心得体会。</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/Button的代码重构：用状态机来管理状态/Button的代码重构：用状态机来管理状态/" itemprop="url">Button的代码重构：用状态机来管理状态</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T15:20:01+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-16T09:31:24+08:00">
+                2018-10-16
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,033
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近几周的时间都在重构一个控件。仿照 AppStore 中的下载效果写的一个按钮。写篇文章记录一下心得体会。</p>
 <p>文章分为重构前，为什么重构，以及重构后三部分去叙述代码层面的设计思想。这里规避了繁琐的业务逻辑，以及为了解决实际应用场景中 cell 的复用而做的一些处理，仅仅聚焦于类的职责设计。</p>
 <p>先看一下效果图</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/1501971-e8504a3fd10be529.gif?imageMogr2/auto-orient/strip" alt="IMG_1079.TRIM.gif"></p>
@@ -335,41 +640,168 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;OUPOperationButton.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonImageView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonProcessView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTextView.h&quot;</span><br><span class="line">#import &quot;OUPOperationButtonTransitionManager.h&quot;</span><br><span class="line"></span><br><span class="line">@interface OUPOperationButton ()</span><br><span class="line"></span><br><span class="line">@property (nonatomic) UIControl* backingControl;</span><br><span class="line">@property (nonatomic) OUPOperationButtonTextView* textView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonImageView* imageView;</span><br><span class="line">@property (nonatomic) OUPOperationButtonProcessView* processView;</span><br><span class="line"></span><br><span class="line">@property (nonatomic) OUPOperationButtonTransitionManager* transitionManager;</span><br><span class="line"></span><br><span class="line">--- state相关的UI更新接口</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>现在我们想在 Button 中额外增加一种情况的话，我们需要在OUPOperationButtonTransitionManager 中定义新的 state 和事件，在OUPOperationButton+FSM 中定义对应的UI更新。这样明显比一股脑的全塞在Button 中要清晰的多。</p>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/06/记一次CATextLayer的使用心得/" >
-  记一次CATextLayer的使用心得
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/09/06/记一次CATextLayer的使用心得/"><span class="article-date">
-  2018-09-06
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/记一次CATextLayer的使用心得/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <p>今天优化代码的时候发现了一个好玩的事情。</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/06/记一次CATextLayer的使用心得/" itemprop="url">记一次CATextLayer的使用心得</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T16:40:31+08:00">
+                2018-09-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-16T09:31:49+08:00">
+                2018-10-16
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,123
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天优化代码的时候发现了一个好玩的事情。</p>
 <p>需求是实现一个头部显示value值的Slider控件。这个Slider我们是自己绘制的一个UIControl对象，它的trackline和thumbIcon都是我们用layer绘制上去的，因为Calayer本身具有隐性动画，所以最后的效果和系统几乎是完全一致。</p>
 <p>一开始的时候，我就直接用UILabel来绘制这个value。然后将label的size，font以及color等属性暴露给调用者，后来想想size直接放在外面不大好，毕竟别人想调用一个可以显示数值的Slider还需要关心label的大小？</p>
 <p>于是就在实现文件中声明了一个变量，给定了一个宽度（一个我认为足够大的值），但是因为字体的大小不固定，所以label的高度没法确定。一开始想的是在font的set方法中用<code>[valueLabel sizetofit]</code>来计算出label的height。后来我查到了一个UIFont的属性lineHeight，lineHeight可以根据不同font值计算出合适的高度，这个值你只需要调用lineHeight的getter方法就可以拿到了，不用计算，非常方便。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UIFont *font0 = [UIFont systemFontOfSize:15];</span><br><span class="line">UILabel *label0 = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, font0.lineHeight;)];</span><br><span class="line"></span><br><span class="line">UIFont *font1 = [UIFont systemFontOfSize:25];</span><br><span class="line">UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, font1.lineHeight)];</span><br></pre></td></tr></table></figure></p>
@@ -403,41 +835,168 @@
 <p>其次换成了CATextLayer之后，我将font和fontSize以及foregroundColor属性暴露了出去，因为之前可以通过UIFont的lineHeight属性直接拿到UILabel对于不同字体自适应的高度值，所以这里没有用UIFont后，就换成了<code>sizeWithAttributes:</code>或者<code>sizeWithFont:</code>方法来搞定。</p>
 <p>后来codeReview的时候，我觉得完全可以和以前一样，直接将UIFont和UIColor暴露给外部，因为在UIFont的set方法中，通过<code>CGFontCreateWithFontName((__bridge CFStringRef)labelFont.fontName)</code>和<code>labelFont.pointSize</code>就可以拿到对应的CATextLayer的font和fontSize的属性，内部声明两个变量记录就好了。因为调用者其实应该是更熟悉UIFont的，而且只传一个属性简便的多。对于UIColor，set方法中取出它的CGColor就好，之前设置的暴露参数都不用修改，只需要内部做一下改动。</p>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/09/04/Type Inference with __auto_type in Objective-C/" >
-  Type Inference with __auto_type in Objective-C
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/09/04/Type Inference with __auto_type in Objective-C/"><span class="article-date">
-  2018-09-04
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/Type Inference with __auto_type in Objective-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <p>写<code>Objective-C</code>的时候，因为要遵循驼峰命名法，所以写一个变量之前，首先要想如何优雅的为其命名，然后再用对应的类型去接收它。很多时候，这个类型需要重复的去写，非常麻烦。</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/Type Inference with __auto_type in Objective-C/" itemprop="url">Type Inference with __auto_type in Objective-C</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T22:47:31+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:56:52+08:00">
+                2018-09-05
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  335
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>写<code>Objective-C</code>的时候，因为要遵循驼峰命名法，所以写一个变量之前，首先要想如何优雅的为其命名，然后再用对应的类型去接收它。很多时候，这个类型需要重复的去写，非常麻烦。</p>
 <p>我们知道在<code>Swift</code>里面，有两种申明变量的方式：<code>let</code> 和 <code>var</code><br><code>let</code> 用于定义常量，定义完后不能修改<br><code>var</code> 用于定义变量，定义完后可以修改</p>
 <p>申明常量或者变量的同时如果赋值的话，编译器会自动推断类型，列如<br><code>let age0 = 10</code><br><code>var age1 = &quot;10&quot;</code><br><code>age0</code>为<code>int</code>型，<code>age1</code>为<code>String</code>型</p>
 <p>######那在<code>Objective-C</code>中如何做到这样呢？<br>得益于苹果在<code>Xcode8</code>中已经支持类型推倒，我们就可以用<code>C</code>的<code>__auto_type</code>和<code>C++</code>的<code>auto</code>来定义一个<code>宏let</code> 这样在项目了我们就可以用<code>let</code>来接收一切类型了</p>
@@ -445,41 +1004,168 @@
 <p>比如<br>定义一个结构体类型 <code>let trackFrame = self.trackLayer.frame;</code><br>定义一个数组类型 <code>let selected = [self indexPathsForSelectedItems];</code><br>定义一个字符串类型 <code>let title = @&quot;i am a text&quot;;</code></p>
 <p>关于<code>Type Inference with __auto_type</code>的更多信息：<br><a href="https://intii.com/2017/write-objc-like-writing-swift/" target="_blank" rel="noopener">https://intii.com/2017/write-objc-like-writing-swift/</a><br><a href="https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372" target="_blank" rel="noopener">https://medium.com/@maicki/type-inference-with-auto-type-55a38ef56372</a></p>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/07/31/Runloop知识点小集/" >
-  Runloop知识点小集
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/07/31/Runloop知识点小集/"><span class="article-date">
-  2018-07-31
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/Runloop知识点小集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <h2 id="一-Runloop简介"><a href="#一-Runloop简介" class="headerlink" title="一. Runloop简介"></a>一. Runloop简介</h2><ol>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/31/Runloop知识点小集/" itemprop="url">Runloop知识点小集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T21:37:16+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-31T21:38:06+08:00">
+                2018-07-31
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,403
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一-Runloop简介"><a href="#一-Runloop简介" class="headerlink" title="一. Runloop简介"></a>一. Runloop简介</h2><ol>
 <li>RunLoop字面意思就是一个跑起来的循环,我们的程序之所以能一直运行不会无端退出就是因为RunLoop的存在。</li>
 <li>RunLoop用来处理程序运行过程中出现的各种事件，从而保持程序的持续运行。而且在没有事件处理的时候，会进入睡眠模式，从而节省CPU资源，提高程序性能。</li>
 </ol>
@@ -520,41 +1206,168 @@
 <p>这里需要注意的是，如果Timer是添加到特定模式下的Runloop中，那么timer对象会存储在CFRunLoopMode的CFMutableArrayRef _timers中。如果Timer是添加到通用模式下的Runloop中，timer对象会储存在CFRunLoop的CFMutableSetRef _commonModeItems中。</p>
 <p>CFRunloopRef的源码是完全公开的，可以通过以下链接访问下载源码： <a href="https://opensource.apple.com/tarballs/CF/" target="_blank" rel="noopener">https://opensource.apple.com/tarballs/CF/</a></p>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/06/28/探究KVO的实现原理/" >
-  探究KVO的实现原理
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/06/28/探究KVO的实现原理/"><span class="article-date">
-  2018-06-28
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/探究KVO的实现原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <h1 id="一-KVO简介"><a href="#一-KVO简介" class="headerlink" title="一. KVO简介"></a>一. KVO简介</h1><p>熟悉iOS开发者模式的都知道 <strong>Key-Value-Observe（观察者模式）</strong><br>该模式的实现基于三个方法：</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/28/探究KVO的实现原理/" itemprop="url">探究KVO的实现原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T22:47:31+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:56:27+08:00">
+                2018-09-05
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,965
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一-KVO简介"><a href="#一-KVO简介" class="headerlink" title="一. KVO简介"></a>一. KVO简介</h1><p>熟悉iOS开发者模式的都知道 <strong>Key-Value-Observe（观察者模式）</strong><br>该模式的实现基于三个方法：</p>
 <ol>
 <li><p>给某个对象实例添加监听</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//参数的意思分别是 要被监听的对象 要被监听的属性 监听的类型 上下文</span><br><span class="line">addObserver:&lt;#(nonnull NSObject *)#&gt; forKeyPath:&lt;#(nonnull NSString *)#&gt; options:&lt;#(NSKeyValueObservingOptions)#&gt; context:&lt;#(nullable void *)#&gt;</span><br></pre></td></tr></table></figure>
@@ -624,41 +1437,168 @@
 <li>我们可以通过任何可以访问属性存取方法的方式来触发<code>KVO</code>（间接或者直接），我们也可以通过<code>willChangeValueForKey:</code>和<code>didChangeValueForKey:</code>两个方法来手动触发<code>KVO</code>。</li>
 </ol>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/06/03/GCD知识小集/" >
-  GCD知识小集
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/06/03/GCD知识小集/"><span class="article-date">
-  2018-06-03
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/GCD知识小集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h4 id="Grand-Central-Dispatch"><a href="#Grand-Central-Dispatch" class="headerlink" title="Grand Central Dispatch"></a>Grand Central Dispatch</h4><p><code>Grand Central Dispatch（GCD）</code>是异步执行任务的技术之一。一般讲应用程序中记述的线程管理用的代码在系统级中实现，开发者只需要定义想执行的任务并追加到适当的<code>Dispatch Queue</code> 中，<code>GCD</code>就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可以统一管理，也可执行任务，这样就比以前的线程更有效率。（摘自苹果的官方说明）</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/03/GCD知识小集/" itemprop="url">GCD知识小集</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T11:47:52+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-13T21:29:08+08:00">
+                2018-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,752
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h4 id="Grand-Central-Dispatch"><a href="#Grand-Central-Dispatch" class="headerlink" title="Grand Central Dispatch"></a>Grand Central Dispatch</h4><p><code>Grand Central Dispatch（GCD）</code>是异步执行任务的技术之一。一般讲应用程序中记述的线程管理用的代码在系统级中实现，开发者只需要定义想执行的任务并追加到适当的<code>Dispatch Queue</code> 中，<code>GCD</code>就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可以统一管理，也可执行任务，这样就比以前的线程更有效率。（摘自苹果的官方说明）</p>
 <p>让我们看一下<code>GCD</code>之前，<code>Cocoa框架</code>提供的一些简单的多线程技术：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self performSelectorOnMainThread: withObject: waitUntilDone:</span><br><span class="line">self performSelectorInBackground: withObject:</span><br></pre></td></tr></table></figure></p>
 <p>举个简单的列子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">-(void)doSomething&#123;</span><br><span class="line">NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];</span><br><span class="line">/*</span><br><span class="line">耗时操作</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">耗时操作结束 调用主线程</span><br><span class="line">*/</span><br><span class="line">[self performSelectorOnMainThread:@selector(workDone) withObject:nil waitUntilDone:NO];</span><br><span class="line">[pool drain];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)workDone&#123;</span><br><span class="line">//回到主线程做事 比如UI刷新</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>关于<code>performSelectorOnMainThread:</code>方法中<code>waitUntilDone</code>参数的意义是这样的：如果传YES，则代表<code>[pool drain]</code>需要等待<code>workDone</code>结束之后才能执行，如果传NO，则代表不用等待，直接执行<code>pool drain</code>，再执行<code>workDone</code>。我们还注意到<code>MRC</code>下，需要手动管理内存，所以这里创建了一个自动释放池。</p>
@@ -708,41 +1648,168 @@
 <p>而使用<code>dispatch_once</code>的话，代码则更简洁。而且即使在多线程环境下执行，也可以保证绝对的数据安全。多用于单例的创建。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static dispatch_once_t onceToken;</span><br><span class="line">dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">/*</span><br><span class="line">初始化</span><br><span class="line">*/</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>参考文献：  <a href="https://book.douban.com/subject/24720270/" target="_blank" rel="noopener">《Objective-C高级编程》</a>  <a href="https://book.douban.com/subject/25829244/" target="_blank" rel="noopener">《Effective Objective-C 2.0》</a></p>
 
+          
         
-      </div>
+      
     </div>
+    
+    
+    
 
-  
-    </div>
-  
+    
 
-  
-  
-    <div class="post-list">
-  
+    
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2018/05/20/iOS内存管理/" >
-  iOS内存管理
-</a>
+    
 
-      </h3>
+    <footer class="post-footer">
       
 
-      <div class="article-info">
-        <a href="/2018/05/20/iOS内存管理/"><span class="article-date">
-  2018-05-20
-</span>
-</a>
-        
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/iOS内存管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左博杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author_avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="G.O.D的技术博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
-
-      </div>
-      <div class="article-entry">
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Objective-C</code>是一个面向对象的语言，所以内存管理显得尤为重要。不过在<code>Objective-C</code>中，我们只需要管理对象的内存，非对象的内存不需要我们关心，比如char int 等类型的数据是放置在栈上的，交由系统自动回收。<code>Objective-C</code>一直是使用<code>引用计数</code>来管理对象的内存。什么是引用计数？简单来说，每个对象都有一个计数器，用以表示当前有多少个事物想令此对象继续存活下去，也叫做<code>保留计数</code>。当该对象的计数为0时，该对象就可以废弃了。</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/20/iOS内存管理/" itemprop="url">iOS内存管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T22:47:31+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-05T23:57:53+08:00">
+                2018-09-05
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,811
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Objective-C</code>是一个面向对象的语言，所以内存管理显得尤为重要。不过在<code>Objective-C</code>中，我们只需要管理对象的内存，非对象的内存不需要我们关心，比如char int 等类型的数据是放置在栈上的，交由系统自动回收。<code>Objective-C</code>一直是使用<code>引用计数</code>来管理对象的内存。什么是引用计数？简单来说，每个对象都有一个计数器，用以表示当前有多少个事物想令此对象继续存活下去，也叫做<code>保留计数</code>。当该对象的计数为0时，该对象就可以废弃了。</p>
 <p>在iOS5之前，如果你编写iOS应用程序，你需要手动去管理你创建的对象的内存，即<code>MRC(Manual Reference Counting)</code>。iOS5引入了自动引用计数，即<code>ARC(Automatic Reference Counting)</code>。</p>
 <p><code>ARC</code>的出现，将内存管理这个活从开发者本身转移到了编译器上面。LLVM引入了<code>ARC</code>机制后，可以很清楚目标对象，并能立刻释放那些不再被使用的对象，这样不仅大大减少了开发者的工作量，还使得程序本身的稳定性得到很好的提升。开发者可以更加专注于业务逻辑而不是内存管理。</p>
 <h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>在<code>MRC</code>时代，<code>Objective-C</code>就使用<code>引用计数</code>来管理对象的内存。<code>NSObject协议</code>声明了三个方法用于操作计数器，以递增或递减其值：</p>
@@ -811,35 +1878,344 @@
 <p>在MRC中，创建自动释放池需要<code>NSAutoreleasePool</code>类。这个类专门用来表示自动释放池。这个了解一下即可，毕竟<code>MRC</code>已经是过去了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSAutoreleasePool *pool  = [NSAutoreleasePool alloc] init];</span><br><span class="line">/**比较消耗内存的操作**/</span><br><span class="line">[pool drain];</span><br></pre></td></tr></table></figure></p>
 <p>参考文献：  <a href="https://book.douban.com/subject/24720270/" target="_blank" rel="noopener">《Objective-C高级编程》</a>  <a href="https://book.douban.com/subject/25829244/" target="_blank" rel="noopener">《Effective Objective-C 2.0》</a></p>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author_avatar.JPG"
+                alt="左博杨" />
+            
+              <p class="site-author-name" itemprop="name">左博杨</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/BoYangZuo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zby1004@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="ow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>ow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">左博杨</span>
 
   
-    </div>
-  
-
-
-
-
-
-
-          <div class="main-footer">
-  
-    © 2019 G.O.D的技术博客 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
-      
-        </div>
-      
-    </div>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
   </div>
-  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
-<script src="/scripts/main.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
